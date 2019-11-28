@@ -29,24 +29,24 @@ import javax.inject.Inject
  * loaded from this use case is up to date with the remote data source (Remote Config)
  */
 open class LoadAgendaUseCase @Inject constructor(
-    private val repository: AgendaRepository,
-    @IoDispatcher ioDispatcher: CoroutineDispatcher
+        private val repository: AgendaRepository,
+        @IoDispatcher ioDispatcher: CoroutineDispatcher
 ) : SuspendUseCase<Boolean, List<Block>>(ioDispatcher) {
 
     override suspend fun execute(parameters: Boolean): List<Block> =
-        repository.getAgenda(parameters)
-            .filterNot { it.startTime == it.endTime }
-            .filter { isInConferenceTime(it) }
-            .distinct()
+            repository.getAgenda(parameters)
+//            .filterNot { it.startTime == it.endTime }
+//            .filter { isInConferenceTime(it) }
+                    .distinct()
 
     private fun isInConferenceTime(block: Block): Boolean {
         // Give some margin in case the agenda shows pre and post-conference
         val start = TimeUtils.ConferenceDays.first().start.minusHours(PRE_BONUS_HOURS)
         val end = TimeUtils.ConferenceDays.last().end.plusHours(POST_BONUS_HOURS)
         return block.startTime.isAfter(start) &&
-            block.endTime.isAfter(start) &&
-            block.startTime.isBefore(end) &&
-            block.endTime.isBefore(end)
+                block.endTime.isAfter(start) &&
+                block.startTime.isBefore(end) &&
+                block.endTime.isBefore(end)
     }
 }
 

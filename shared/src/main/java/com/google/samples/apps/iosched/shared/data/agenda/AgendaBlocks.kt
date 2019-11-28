@@ -66,185 +66,221 @@ import org.threeten.bp.ZonedDateTime
  */
 fun generateBlocks(dataSource: AppConfigDataSource): List<Block> {
     return listOf(
-        Block(
-            title = dataSource.getString(LABEL_REGISTRATION).value ?: LABEL_REGISTRATION_DEFAULT,
-            type = TYPE_REGISTRATION,
-            color = COLOR_REGISTRATION,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(REGISTRATION_DAY1_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_REGISTRATION).value
+                            ?: LABEL_REGISTRATION_DEFAULT,
+                    type = TYPE_REGISTRATION,
+                    color = COLOR_REGISTRATION,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(REGISTRATION_DAY1_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(REGISTRATION_DAY1_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(REGISTRATION_DAY1_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_BREAKFAST).value ?: LABEL_BREAKFAST_DEFAULT,
-            type = TYPE_MEAL,
-            color = COLOR_MEAL,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(BREAKFAST_DAY1_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_SESSIONS).value ?: LABEL_SESSIONS_DEFAULT,
+                    type = TYPE_SESSIONS,
+                    color = COLOR_SESSIONS,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(BREAKFAST_DAY1_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(BREAKFAST_DAY1_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(BREAKFAST_DAY1_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_KEYNOTE).value ?: LABEL_KEYNOTE_DEFAULT,
-            type = TYPE_KEYNOTE,
-            color = COLOR_KEYNOTE,
-            isDark = true,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(KEYNOTE_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_TEA_BREAK).value ?: LABEL_TEA_BREAK_DEFAULT,
+                    type = TYPE_MEAL,
+                    color = COLOR_MEAL,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(BREAKFAST_DAY1_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(BREAKFAST_DAY1_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(KEYNOTE_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_SESSIONS).value ?: LABEL_SESSIONS_DEFAULT,
-            type = TYPE_SESSIONS,
-            color = COLOR_SESSIONS,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY1_1_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_KEYNOTE).value ?: LABEL_KEYNOTE_DEFAULT,
+                    type = TYPE_KEYNOTE,
+                    color = COLOR_KEYNOTE,
+                    isDark = true,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(KEYNOTE_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(KEYNOTE_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY1_1_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_LUNCH).value ?: LABEL_LUNCH_DEFAULT,
-            type = TYPE_MEAL,
-            color = COLOR_MEAL,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(LUNCH_DAY1_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_LUNCH).value ?: LABEL_LUNCH_DEFAULT,
+                    type = TYPE_MEAL,
+                    color = COLOR_MEAL,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY1_1_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY1_1_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(LUNCH_DAY1_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_SESSIONS).value ?: LABEL_SESSIONS_DEFAULT,
-            type = TYPE_SESSIONS,
-            color = COLOR_SESSIONS,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY1_2_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_SESSIONS).value ?: LABEL_SESSIONS_DEFAULT,
+                    type = TYPE_SESSIONS,
+                    color = COLOR_SESSIONS,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(LUNCH_DAY1_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(LUNCH_DAY1_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY1_2_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_TEA_BREAK).value ?: LABEL_TEA_BREAK_DEFAULT,
-            type = TYPE_MEAL,
-            color = COLOR_MEAL,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(TEA_BREAK_DAY1_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_TEA_BREAK).value ?: LABEL_TEA_BREAK_DEFAULT,
+                    type = TYPE_MEAL,
+                    color = COLOR_MEAL,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY1_2_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY1_2_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(TEA_BREAK_DAY1_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_SESSIONS).value ?: LABEL_SESSIONS_DEFAULT,
-            type = TYPE_SESSIONS,
-            color = COLOR_SESSIONS,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY1_3_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_SESSIONS).value ?: LABEL_SESSIONS_DEFAULT,
+                    type = TYPE_SESSIONS,
+                    color = COLOR_SESSIONS,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY1_3_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY1_3_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY1_3_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_PARTY).value ?: LABEL_PARTY_DEFAULT,
-            type = TYPE_AFTER_HOURS,
-            color = COLOR_AFTER_HOURS,
-            isDark = true,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(PARTY_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_PARTY).value ?: LABEL_PARTY_DEFAULT,
+                    type = TYPE_AFTER_HOURS,
+                    color = COLOR_AFTER_HOURS,
+                    isDark = true,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(PARTY_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(PARTY_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(PARTY_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_REGISTRATION).value ?: LABEL_REGISTRATION_DEFAULT,
-            type = TYPE_REGISTRATION,
-            color = COLOR_REGISTRATION,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(REGISTRATION_DAY2_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_PARTY).value ?: LABEL_PARTY_DEFAULT,
+                    type = TYPE_AFTER_HOURS,
+                    color = COLOR_AFTER_HOURS,
+                    isDark = true,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(PARTY_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(PARTY_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(REGISTRATION_DAY2_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_BREAKFAST).value ?: LABEL_BREAKFAST_DEFAULT,
-            type = TYPE_MEAL,
-            color = COLOR_MEAL,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(BREAKFAST_DAY2_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_REGISTRATION).value
+                            ?: LABEL_REGISTRATION_DEFAULT,
+                    type = TYPE_REGISTRATION,
+                    color = COLOR_REGISTRATION,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(REGISTRATION_DAY2_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(REGISTRATION_DAY2_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(BREAKFAST_DAY2_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_SESSIONS).value
-                    ?: LABEL_SESSIONS_DEFAULT,
-            type = TYPE_SESSIONS,
-            color = COLOR_SESSIONS,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY2_1_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_BREAKFAST).value ?: LABEL_BREAKFAST_DEFAULT,
+                    type = TYPE_MEAL,
+                    color = COLOR_MEAL,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(BREAKFAST_DAY2_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(BREAKFAST_DAY2_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY2_1_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_LUNCH).value ?: LABEL_LUNCH_DEFAULT,
-            type = TYPE_MEAL,
-            color = COLOR_MEAL,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(LUNCH_DAY2_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_SESSIONS).value
+                            ?: LABEL_SESSIONS_DEFAULT,
+                    type = TYPE_SESSIONS,
+                    color = COLOR_SESSIONS,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY2_1_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY2_1_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(LUNCH_DAY2_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_SESSIONS).value ?: LABEL_SESSIONS_DEFAULT,
-            type = TYPE_SESSIONS,
-            color = COLOR_SESSIONS,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY2_2_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_TEA_BREAK).value ?: LABEL_TEA_BREAK_DEFAULT,
+                    type = TYPE_MEAL,
+                    color = COLOR_MEAL,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(LUNCH_DAY2_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(LUNCH_DAY2_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY2_2_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_TEA_BREAK).value ?: LABEL_TEA_BREAK_DEFAULT,
-            type = TYPE_MEAL,
-            color = COLOR_MEAL,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(TEA_BREAK_DAY2_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_SESSIONS).value ?: LABEL_SESSIONS_DEFAULT,
+                    type = TYPE_SESSIONS,
+                    color = COLOR_SESSIONS,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY2_2_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY2_2_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(TEA_BREAK_DAY2_END_TIME).value
-            )
-        ),
-        Block(
-            title = dataSource.getString(LABEL_SESSIONS).value ?: LABEL_SESSIONS_DEFAULT,
-            type = TYPE_SESSIONS,
-            color = COLOR_SESSIONS,
-            startTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY2_3_START_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_LUNCH).value ?: LABEL_LUNCH_DEFAULT,
+                    type = TYPE_MEAL,
+                    color = COLOR_MEAL,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(TEA_BREAK_DAY2_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(TEA_BREAK_DAY2_END_TIME).value
+                    )
             ),
-            endTime = ZonedDateTime.parse(
-                dataSource.getString(SESSIONS_DAY2_3_END_TIME).value
+            Block(
+                    title = dataSource.getString(LABEL_SESSIONS).value ?: LABEL_SESSIONS_DEFAULT,
+                    type = TYPE_SESSIONS,
+                    color = COLOR_SESSIONS,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY2_3_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(SESSIONS_DAY2_3_END_TIME).value
+                    )
+            ),
+            Block(
+                    title = dataSource.getString(LABEL_TEA_BREAK).value ?: LABEL_TEA_BREAK_DEFAULT,
+                    type = TYPE_MEAL,
+                    color = COLOR_MEAL,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(TEA_BREAK_DAY2_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(TEA_BREAK_DAY2_END_TIME).value
+                    )
+            ),
+            Block(
+                    title = dataSource.getString(LABEL_SESSIONS).value ?: LABEL_SESSIONS_DEFAULT,
+                    type = TYPE_SESSIONS,
+                    color = COLOR_SESSIONS,
+                    startTime = ZonedDateTime.parse(
+                            dataSource.getString(TEA_BREAK_DAY2_START_TIME).value
+                    ),
+                    endTime = ZonedDateTime.parse(
+                            dataSource.getString(TEA_BREAK_DAY2_END_TIME).value
+                    )
             )
-        )
     )
 }
 
@@ -253,7 +289,7 @@ private const val LABEL_KEYNOTE_DEFAULT = "Keynote"
 private const val LABEL_SESSIONS_DEFAULT = "Sessions"
 private const val LABEL_BREAKFAST_DEFAULT = "Breakfast"
 private const val LABEL_LUNCH_DEFAULT = "Lunch"
-private const val LABEL_TEA_BREAK_DEFAULT = "Tea Break"
+private const val LABEL_TEA_BREAK_DEFAULT = "Tea/Cofee Break"
 private const val LABEL_PARTY_DEFAULT = "Party"
 
 private const val TYPE_REGISTRATION = "badge"
