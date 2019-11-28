@@ -1,52 +1,66 @@
 {
   "project_info": {
-    "project_number": "111111111111",
-    "firebase_url": "https://yourproject.firebaseio.com",
-    "project_id": "yourproject",
-    "storage_bucket": "yourproject.appspot.com"
+    "project_number": "399069283945",
+    "firebase_url": "https://io-9b705.firebaseio.com",
+    "project_id": "io-9b705",
+    "storage_bucket": "io-9b705.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:111111111111:android:2222222222222222",
+        "mobilesdk_app_id": "1:399069283945:android:01a88cf82d703c54e484f8",
         "android_client_info": {
-          "package_name": "com.google.samples.apps.adssched"
+          "package_name": "np.com.naxa.conf.lmtc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "111111111111-an222222222222222222222222222222.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.google.samples.apps.adssched",
-            "certificate_hash": "4444444444444444444444444444444444444444"
-          }
-        },
-        {
-          "client_id": "444444444444-33333333333333333333333333333333.apps.googleusercontent.com",
+          "client_id": "399069283945-hdum6cvpqi19u77aagt3l6flcc3v59ld.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIz5444444444444444444444444444444444V0"
+          "current_key": "AIzaSyCOJNQpGZGb9CgXpvx8F8R9yLDl0Mx34gY"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "444444444444-66666666666666666666666666666666.apps.googleusercontent.com",
+              "client_id": "399069283945-hdum6cvpqi19u77aagt3l6flcc3v59ld.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399069283945:android:8628729afd7529a6e484f8",
+        "android_client_info": {
+          "package_name": "np.com.naxa.lmtc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "399069283945-hdum6cvpqi19u77aagt3l6flcc3v59ld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOJNQpGZGb9CgXpvx8F8R9yLDl0Mx34gY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "399069283945-hdum6cvpqi19u77aagt3l6flcc3v59ld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
