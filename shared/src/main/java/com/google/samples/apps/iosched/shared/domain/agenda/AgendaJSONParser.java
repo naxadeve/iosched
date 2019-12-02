@@ -24,11 +24,41 @@ import org.json.JSONObject;
 import org.threeten.bp.ZonedDateTime;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static com.google.samples.apps.iosched.model.Tag.TYPE_SESSIONS;
+import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_AFTER_HOURS;
+import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_BIM_SESSION;
+import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_HONOUR;
+import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_KEYNOTE;
+import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_MEAL;
+import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_REGISTRATION;
+import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_REMARKS;
 import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_SESSIONS;
+import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_SHOWCASE;
+import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_SPEECH;
 
 public class AgendaJSONParser {
+
+    private static HashMap<String, Integer> typeColorMAP = new HashMap<>();
+
+    static {
+
+        typeColorMAP.put("Technical Session", COLOR_SESSIONS);
+        typeColorMAP.put("Tea", COLOR_MEAL);
+        typeColorMAP.put("Speech", COLOR_SPEECH);
+        typeColorMAP.put("Showcase", COLOR_SHOWCASE);
+        typeColorMAP.put("Remarks", COLOR_REMARKS);
+        typeColorMAP.put("Registration", COLOR_REGISTRATION);
+        typeColorMAP.put("Party", COLOR_AFTER_HOURS);
+        typeColorMAP.put("Lunch", COLOR_MEAL);
+        typeColorMAP.put("Keynote", COLOR_KEYNOTE);
+        typeColorMAP.put("Key note", COLOR_KEYNOTE);
+        typeColorMAP.put("Honour", COLOR_HONOUR);
+        typeColorMAP.put("BIM Session", COLOR_BIM_SESSION);
+
+    }
+
 
     public static ArrayList<Block> getAgenda() throws JSONException {
         JSONArray jsonArray = new JSONArray(json);
@@ -39,18 +69,25 @@ public class AgendaJSONParser {
             String title = agenda.optString("title");
 
             agenda.optString("title_2");
-            agenda.optString("type");
+            String type = agenda.optString("type");
             String start = agenda.optString("start");
             String end = agenda.optString("end");
 
-            block = new Block(title, TYPE_SESSIONS, COLOR_SESSIONS,
-                    COLOR_SESSIONS, false, ZonedDateTime.parse(start),
-                    ZonedDateTime.parse(end));
 
+            block = new Block(title, TYPE_SESSIONS, getOrDefault(typeColorMAP, type),
+                    getOrDefault(typeColorMAP, type), false, ZonedDateTime.parse(start),
+                    ZonedDateTime.parse(end));
             blocks.add(block);
         }
 
         return blocks;
+    }
+
+    private static Integer getOrDefault(HashMap<String, Integer> map, String key) {
+        if (map.containsKey(key)) {
+            return map.get(key);
+        }
+        return COLOR_SESSIONS;
     }
 
 

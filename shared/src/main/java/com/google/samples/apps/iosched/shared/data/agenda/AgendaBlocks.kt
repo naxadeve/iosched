@@ -420,3 +420,8 @@ const val COLOR_SESSIONS = 0xfff86734.toInt()
 const val COLOR_MEAL = 0xff3ddc84.toInt()
 const val COLOR_AFTER_HOURS = 0xff202124.toInt()
 const val COLOR_REMARKS = 0xff202124.toInt()
+const val COLOR_SHOWCASE = 0xff202124.toInt()
+const val COLOR_HONOUR = 0xff202124.toInt()
+const val COLOR_BIM_SESSION = 0xff202124.toInt()
+const val COLOR_SPEECH = 0xff202124.toInt()
+
