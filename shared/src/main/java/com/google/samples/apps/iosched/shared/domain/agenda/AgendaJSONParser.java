@@ -16,6 +16,8 @@
 
 package com.google.samples.apps.iosched.shared.domain.agenda;
 
+import android.text.TextUtils;
+
 import com.google.samples.apps.iosched.model.Block;
 
 import org.json.JSONArray;
@@ -44,18 +46,16 @@ public class AgendaJSONParser {
 
     static {
 
-        typeColorMAP.put("Technical Session", COLOR_SESSIONS);
-        typeColorMAP.put("Tea", COLOR_MEAL);
-        typeColorMAP.put("Speech", COLOR_SPEECH);
-        typeColorMAP.put("Showcase", COLOR_SHOWCASE);
-        typeColorMAP.put("Remarks", COLOR_REMARKS);
-        typeColorMAP.put("Registration", COLOR_REGISTRATION);
-        typeColorMAP.put("Party", COLOR_AFTER_HOURS);
-        typeColorMAP.put("Lunch", COLOR_MEAL);
-        typeColorMAP.put("Keynote", COLOR_KEYNOTE);
-        typeColorMAP.put("Key note", COLOR_KEYNOTE);
-        typeColorMAP.put("Honour", COLOR_HONOUR);
-        typeColorMAP.put("BIM Session", COLOR_BIM_SESSION);
+        typeColorMAP.put("session", COLOR_SESSIONS);
+        typeColorMAP.put("meal", COLOR_MEAL);
+        typeColorMAP.put("speech", COLOR_SPEECH);
+        typeColorMAP.put("showcase", COLOR_SHOWCASE);
+        typeColorMAP.put("remark", COLOR_REMARKS);
+        typeColorMAP.put("badge", COLOR_REGISTRATION);
+        typeColorMAP.put("after_hours", COLOR_AFTER_HOURS);
+        typeColorMAP.put("keynote", COLOR_KEYNOTE);
+        typeColorMAP.put("honour", COLOR_HONOUR);
+        typeColorMAP.put("bim_session", COLOR_BIM_SESSION);
 
     }
 
@@ -67,15 +67,24 @@ public class AgendaJSONParser {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject agenda = jsonArray.getJSONObject(i);
             String title = agenda.optString("title");
-
-            agenda.optString("title_2");
             String type = agenda.optString("type");
+            boolean isDark = type.equalsIgnoreCase("keynote") || type.contains("session") || type.contains("after_hours")
+                    || type.contains("speech") || type.contains("honour");
+
+            String title2 = agenda.optString("title_2");
             String start = agenda.optString("start");
             String end = agenda.optString("end");
 
+            if (!TextUtils.isEmpty(title2)) {
+                block = new Block(title2, type, getOrDefault(typeColorMAP, type),
+                        getOrDefault(typeColorMAP, type), isDark, ZonedDateTime.parse(start),
+                        ZonedDateTime.parse(end));
+                blocks.add(block);
+            }
+
 
             block = new Block(title, type, getOrDefault(typeColorMAP, type),
-                    getOrDefault(typeColorMAP, type), false, ZonedDateTime.parse(start),
+                    getOrDefault(typeColorMAP, type), isDark, ZonedDateTime.parse(start),
                     ZonedDateTime.parse(end));
             blocks.add(block);
         }
