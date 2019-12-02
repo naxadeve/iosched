@@ -148,18 +148,25 @@ open class RemoteAppConfigDataSource @Inject constructor(
     companion object {
         const val REGISTRATION_DAY1_START_TIME = "registration_day1_start_time"
         const val REGISTRATION_DAY1_END_TIME = "registration_day1_end_time"
+
         const val REGISTRATION_DAY2_START_TIME = "registration_day2_start_time"
         const val REGISTRATION_DAY2_END_TIME = "registration_day2_end_time"
+
         const val BREAKFAST_DAY1_START_TIME = "breakfast_day1_start_time"
         const val BREAKFAST_DAY1_END_TIME = "breakfast_day1_end_time"
+
         const val BREAKFAST_DAY2_START_TIME = "breakfast_day2_start_time"
         const val BREAKFAST_DAY2_END_TIME = "breakfast_day2_end_time"
+
         const val KEYNOTE_START_TIME = "keynote_start_time"
         const val KEYNOTE_END_TIME = "keynote_end_time"
+
         const val LUNCH_DAY1_START_TIME = "lunch_day1_start_time"
         const val LUNCH_DAY1_END_TIME = "lunch_day1_end_time"
+
         const val LUNCH_DAY2_START_TIME = "lunch_day2_start_time"
         const val LUNCH_DAY2_END_TIME = "lunch_day2_end_time"
+
         const val SESSIONS_DAY1_1_START_TIME = "sessions_day1_1_start_time"
         const val SESSIONS_DAY1_1_END_TIME = "sessions_day1_1_end_time"
         const val SESSIONS_DAY1_2_START_TIME = "sessions_day1_2_start_time"
