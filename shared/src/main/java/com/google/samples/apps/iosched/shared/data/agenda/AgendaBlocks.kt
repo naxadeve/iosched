@@ -412,16 +412,16 @@ private const val TYPE_KEYNOTE = "keynote"
 private const val TYPE_SESSIONS = "session"
 private const val TYPE_MEAL = "meal"
 private const val TYPE_AFTER_HOURS = "after_hours"
-private const val TYPE_REMARK = TYPE_KEYNOTE;
+private const val TYPE_REMARK = "remark";
 
 const val COLOR_REGISTRATION = 0xffd7effe.toInt()
 const val COLOR_KEYNOTE = 0xff4285f4.toInt()
 const val COLOR_SESSIONS = 0xfff86734.toInt()
 const val COLOR_MEAL = 0xff3ddc84.toInt()
 const val COLOR_AFTER_HOURS = 0xff202124.toInt()
-const val COLOR_REMARKS = 0xff202124.toInt()
-const val COLOR_SHOWCASE = 0xff202124.toInt()
-const val COLOR_HONOUR = 0xff202124.toInt()
-const val COLOR_BIM_SESSION = 0xff202124.toInt()
-const val COLOR_SPEECH = 0xff202124.toInt()
+const val COLOR_REMARKS = 0xff3ddc84.toInt()
+const val COLOR_SHOWCASE = 0xff3ddc84.toInt()
+const val COLOR_HONOUR = 0xff3ddc84.toInt()
+const val COLOR_BIM_SESSION = 0xff3ddc84.toInt()
+const val COLOR_SPEECH = 0xff3ddc84.toInt()
 
