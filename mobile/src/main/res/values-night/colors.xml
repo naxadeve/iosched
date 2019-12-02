@@ -22,8 +22,8 @@
     <!-- Used for detail/speaker header background and other generic placeholder backgrounds -->
     <color name="generic_placeholder_background">#10FFFFFF</color>
 
-    <color name="color_primary">@color/android_green</color>
-    <color name="color_primary_dark">@color/android_green_dark</color>
+    <color name="color_primary">@color/white_90</color>
+    <color name="color_primary_dark">@color/white</color>
     <color name="color_on_secondary">#000</color>
 
     <color name="info_event_card_logo_background">#2EFFFFFF</color>

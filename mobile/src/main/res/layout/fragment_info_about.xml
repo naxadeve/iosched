@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2018 Google LLC
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,12 +41,85 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_normal"
-                android:text="@string/faq_label"
                 android:contentDescription="@string/faq_label"
+                android:text="@string/lmtc_faq_label"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:websiteLink="@{@string/faq_url}" />
+
+
+            <com.google.samples.apps.iosched.widget.CollapsibleCard
+                android:id="@+id/welcome_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardDescription="@string/lmtc_welcome_message_description"
+                app:cardTitle="@string/lmtc_welcome_message_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/faq_link" />
+
+
+            <com.google.samples.apps.iosched.widget.CollapsibleCard
+                android:id="@+id/advisory_committee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardDescription="@string/lmtc_advisory_committee_description"
+                app:cardTitle="@string/lmtc_advisory_committee_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcome_message" />
+
+            <com.google.samples.apps.iosched.widget.CollapsibleCard
+                android:id="@+id/organizing_committee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardDescription="@string/lmtc_organizing_committee_description"
+                app:cardTitle="@string/lmtc_organizing_committee_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/advisory_committee" />
+
+            <com.google.samples.apps.iosched.widget.CollapsibleCard
+                android:id="@+id/event_management_committee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardDescription="@string/lmtc_event_managment_committee_description"
+                app:cardTitle="@string/lmtc_event_managment_committee_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/organizing_committee" />
+
+            <com.google.samples.apps.iosched.widget.CollapsibleCard
+                android:id="@+id/international_program_committee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardDescription="@string/lmtc_international_program_committee_description"
+                app:cardTitle="@string/lmtc_international_program_committee_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/event_management_committee" />
+
+            <com.google.samples.apps.iosched.widget.CollapsibleCard
+                android:id="@+id/technical_committee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardDescription="@string/lmtc_technical_committee_description"
+                app:cardTitle="@string/lmtc_technical_committee_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/international_program_committee" />
+
+            <com.google.samples.apps.iosched.widget.CollapsibleCard
+                android:id="@+id/workshop_secretariat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardDescription="@string/lmtc_workshop_secretariat_description"
+                app:cardTitle="@string/lmtc_workshop_secretariat_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/technical_committee" />
+
 
             <Button
                 android:id="@+id/terms_of_service"
@@ -55,9 +127,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/settings_tos"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/faq_link"
+                app:layout_constraintTop_toBottomOf="@+id/workshop_secretariat"
                 app:websiteLink="@{@string/tos_url}" />
 
             <Button
@@ -66,6 +139,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/settings_privacy_policy"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/terms_of_service"
@@ -77,17 +151,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/settings_oss_licenses"
+                app:dialogTitle="@{@string/settings_oss_licenses}"
+                app:fileLink="@{@string/oss_file}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/privacy_policy"
-                app:dialogTitle="@{@string/settings_oss_licenses}"
-                app:fileLink="@{@string/oss_file}" />
+                app:layout_constraintTop_toBottomOf="@id/privacy_policy" />
 
             <TextView
                 android:id="@+id/version_build_number"
                 style="@style/TextAppearance.IOSched.SettingsSwitch"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/open_source_license"
@@ -98,9 +173,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/margin_normal"
-                android:drawablePadding="@dimen/margin_small"
                 android:drawableStart="@drawable/ic_logo_components"
-                android:gravity="center"
+                android:drawablePadding="@dimen/margin_small"
+                android:gravity="start"
                 android:paddingHorizontal="@dimen/margin_normal"
                 android:text="@string/built_with_material_components"
                 android:textAppearance="?attr/textAppearanceBody1"

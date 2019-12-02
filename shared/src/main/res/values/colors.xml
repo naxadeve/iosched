@@ -38,4 +38,8 @@
     <color name="ads_light_green">#c3e3b4</color>
     <color name="ads_lighter_green">#94c27e</color>
 
+    <!-- LMTC colors-->
+    <color name="lmtc_red">#a21f2e</color>
+    <color name="lmtc_blue">#0e1b4d</color>
+
 </resources>

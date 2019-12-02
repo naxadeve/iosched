@@ -59,6 +59,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Switch
+                android:visibility="gone"
                 android:id="@+id/settings_time_zone"
                 style="@style/TextAppearance.IOSched.SettingsSwitch"
                 android:layout_width="0dp"
@@ -71,6 +72,7 @@
                 app:layout_constraintTop_toBottomOf="@id/settings_choose_theme" />
 
             <Switch
+                android:visibility="gone"
                 android:id="@+id/settings_enable_notifications"
                 style="@style/TextAppearance.IOSched.SettingsSwitch"
                 android:layout_width="0dp"
@@ -83,6 +85,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/settings_time_zone" />
 
             <Switch
+                android:visibility="gone"
                 android:id="@+id/settings_attending_user"
                 style="@style/TextAppearance.IOSched.SettingsSwitch"
                 android:layout_width="0dp"

@@ -152,20 +152,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/event_types_header"
-                    app:eventDescription="@string/event_sessions_description"
-                    app:eventTitle="@string/event_sessions_title"
+                    app:eventDescription="@string/event_keynote_description"
+                    app:eventTitle="@string/event_keynote_title"
                     app:eventTypeLogo="@drawable/event_header_sessions" />
 
-                <com.google.samples.apps.iosched.widget.EventView
-                    android:id="@+id/event_lightning"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/event_sessions"
-                    app:eventDescription="@string/event_lightning_description"
-                    app:eventTitle="@string/event_lightning_title"
-                    app:eventTypeLogo="@drawable/event_header_sandbox" />
 
                 <com.google.samples.apps.iosched.widget.EventView
                     android:id="@+id/event_codelabs"
@@ -173,9 +163,9 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/event_lightning"
-                    app:eventDescription="@string/event_codelabs_description"
-                    app:eventTitle="@string/event_codelabs_title"
+                    app:layout_constraintTop_toBottomOf="@+id/event_sessions"
+                    app:eventDescription="@string/event_technical_session_description"
+                    app:eventTitle="@string/event_technical_session_title"
                     app:eventTypeLogo="@drawable/event_header_codelabs" />
 
                 <com.google.samples.apps.iosched.widget.EventView
@@ -185,20 +175,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/event_codelabs"
-                    app:eventDescription="@string/event_officehours_description"
-                    app:eventTitle="@string/event_officehours_title"
+                    app:eventDescription="@string/event_bim_session_description"
+                    app:eventTitle="@string/event_bim_session_title"
                     app:eventTypeLogo="@drawable/event_header_office_hours" />
 
-                <com.google.samples.apps.iosched.widget.EventView
-                    android:id="@+id/event_fireside"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/event_officehours"
-                    app:eventDescription="@string/event_fireside_description"
-                    app:eventTitle="@string/event_fireside_title"
-                    app:eventTypeLogo="@drawable/event_header_afterhours" />
 
                 <com.google.samples.apps.iosched.widget.EventView
                     android:id="@+id/event_meals"
@@ -206,7 +186,7 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/event_fireside"
+                    app:layout_constraintTop_toBottomOf="@+id/event_officehours"
                     app:eventDescription="@string/event_meals_description"
                     app:eventTitle="@string/event_meals_title"
                     app:eventTypeLogo="@drawable/event_header_meals" />
