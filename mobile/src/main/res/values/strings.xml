@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2018 Google LLC
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -170,7 +169,7 @@
     <string name="settings_title" translation_description="Title for the tab that shows all the settings of this app.">Settings</string>
     <string name="about_title" translation_description="Title for the 'About' tab that shows miscellaneous info.">About</string>
 
-    <string name="faq_url" translatable="false">https://developer.android.com/dev-summit/faq/</string>
+    <string name="faq_url" translatable="false">https://lmtc.gov.np/workshop/</string>
     <string name="tos_url" translatable="false">https://policies.google.com/terms</string>
     <string name="privacy_policy_url" translatable="false">https://policies.google.com/privacy</string>
     <string name="oss_file" translatable="false">file:///android_asset/licenses.html</string>
@@ -305,7 +304,7 @@
     <string name="settings_theme_battery" translation_description="Theme option to use which is set by the device Battery Saver feature being enabled">Set by Battery Saver</string>
 
     <string name="faq_label" translation_description="Label for link to FAQ on website.">Android Dev Summit website</string>
-    <string name="built_with_material_components" translation_description="The app was built with Material Components.">Built with Material Components.</string>
+    <string name="built_with_material_components" translation_description="The app was built with Material Components.">Built with Material Components \nat NAXA </string>
     <string name="tap_to_join_network" translation_description="Tap to join Wifi network.">(tap to join network)</string>
 
     <!-- Day labels for schedule -->
@@ -334,5 +333,52 @@
     <string name="user_attendee_dialog_description">Show or hide relevant events based on whether you are attending remotely or in person.</string>
     <string name="user_attendee_dialog_remote">Remotely</string>
     <string name="user_attendee_dialog_in_person">In person</string>
+
+    <string name="lmtc_parking_description">Free parking will be available to attendees. Please park in LMTC premise</string>
+    <string name="lmtc_meal_description">Free tea and lunch will be provided to all attendees</string>
+    <string name="lmtc_after_hours_description"> All registered attendees are invited to the party in the evening </string>
+    <string name="lmtc_how_to_get_there_title"> How to get to the venue? </string>
+    <string name="lmtc_how_to_get_there_description"> Coming soon</string>
+    <string name="lmtc_will_there_be_internet_title"> Will there be internet access?</string>
+    <string name="lmtc_will_there_be_internet_description"> Coming soon</string>
+    <string name="lmtc_welcome_message_description"><![CDATA[
+      <h2> Welcome </h2><p>Dear Colleagues and Geospatial enthusiasts, </p><p>On behalf of organizing committee, I take great pride in welcoming all of you to attend this two-day International Event on December 10- 11, 2019 organized by <a href="http://lmtc.gov.np/" target="_blank">Land Management Training Center </a> in collaboration with International Society for Remote Sensing and Photogrammetry (<a href="http://www2.isprs.org/commissions/comm5/wg7.html" target="_blank">TC V / WG 7 </a> and <a href="http://www2.isprs.org/commissions/comm4/wg6.html" target="_blank">TC IV / WG 6</a>), <a href="https://www.facebook.com/nepalrsps/" target="_blank">Nepal Remote Sensing and Photogrammetric Society </a>and <a href="http://charteredsurveyors.org.np/contact-us/" target="_blank">Nepal Institution of Chartered Surveyors</a> in Dhulikhel, a naturally majestic city of Nepal rich in ancient traditions and culture.</p><p>Geospatial domain has the characteristics of rapid development and adoption of newer technologies. This calls for a challenging task of harnessing recent scientific advances across multiple fields of education and research; then accelerate and guide evolution of geospatial technology. To ensure this, this workshop incorporates a wide spectrum of themes and, will provide a perfect global networking platform as it brings together renowned professionals from all over the world. The primary goal of this workshop is to cater exchange of recent research achievements and break-through ideas on cutting edge geospatial technologies and latest trends in geospatial education amongst multi-disciplinary group of attendees. This international workshop also aims to flourish collaborative relationship among national/international institutions, academicians and professionals for mutual benefit through knowledge sharing and technology transfer. </p><p>I believe especially our international participants will enjoy the scenic beauty of naturally enriched mountains during your stay in Nepal. I sincerely invite you to join us to make this workshop a fruitful and memorable event.</p><p>I am looking forward to meeting you all soon!</p><p><strong>Warmest regards,</strong><br> Ganesh Prasad Bhatta<br> (Executive Director, LMTC)<br> Chair, Organizing Committee</p>
+
+    ]]>
+    </string>
+    <string name="lmtc_welcome_message_title">Message from (Executive Director, LMTC)\nChair, Organizing Committee</string>
+
+    <string name="lmtc_faq_label" translation_description="Label for link to FAQ on website.">International Workshop on \'Capacity building and Education Outreach in Advanced Geospatial Technologies and Land Management\’
+    </string>
+
+    <string name="lmtc_advisory_committee_title">Advisory Committee</string>
+    <string name="lmtc_advisory_committee_description">Coming Soon</string>
+
+    <string name="lmtc_organizing_committee_title"> Organizing Committee</string>
+    <string name="lmtc_organizing_committee_description"> Coming soon</string>
+
+
+    <string name="lmtc_event_managment_committee_title">Event Management Committee</string>
+    <string name="lmtc_event_managment_committee_description"> Coming Soon</string>
+
+
+    <string name="lmtc_international_program_committee_title">International Program Committee</string>
+    <string name="lmtc_international_program_committee_description"> Coming Soon</string>
+
+    <string name="lmtc_technical_committee_title">Technical Committee</string>
+    <string name="lmtc_technical_committee_description">Coming Soon</string>
+
+    <string name="lmtc_workshop_secretariat_title">Workshop Secretariat</string>
+    <string name="lmtc_workshop_secretariat_description"> Coming Soon</string>
+    <string name='naxa_url' translatable="false" >https://naxa.com.np/home/</string>
+
+    <string name="event_keynote_title" >Keynote</string>
+    <string name="event_keynote_description" >Coming Soon</string>
+
+    <string name="event_technical_session_title" >Technical Session</string>
+    <string name="event_technical_session_description" >Coming Soon</string>
+
+    <string name="event_bim_session_title" >Bim Session</string>
+    <string name="event_bim_session_description" >Coming Soon</string>
 
 </resources>
