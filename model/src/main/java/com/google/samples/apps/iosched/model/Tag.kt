@@ -81,6 +81,8 @@ data class Tag(
         const val TYPE_MEETUPS = "type_meetups"
         const val TYPE_OFFICEHOURS = "type_officehours"
         const val TYPE_SANDBOXDEMO = "type_sandboxdemos"
+
+
     }
 
     /** Only IDs are used for equality. */

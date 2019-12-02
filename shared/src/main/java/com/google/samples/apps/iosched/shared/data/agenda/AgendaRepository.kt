@@ -18,6 +18,7 @@ package com.google.samples.apps.iosched.shared.data.agenda
 
 import com.google.samples.apps.iosched.model.Block
 import com.google.samples.apps.iosched.shared.data.config.AppConfigDataSource
+import com.google.samples.apps.iosched.shared.domain.agenda.AgendaJSONParser
 
 /**
  * Single point of access to agenda data for the presentation layer.
@@ -33,13 +34,13 @@ interface AgendaRepository {
 }
 
 class DefaultAgendaRepository(
-    private val appConfigDataSource: AppConfigDataSource
+        private val appConfigDataSource: AppConfigDataSource
 ) : AgendaRepository {
 
     override suspend fun getAgenda(forceRefresh: Boolean): List<Block> {
-        if (forceRefresh) {
+        if (false) {
             appConfigDataSource.syncStrings()
         }
-        return generateBlocks(appConfigDataSource)
+        return AgendaJSONParser.getAgenda()
     }
 }
