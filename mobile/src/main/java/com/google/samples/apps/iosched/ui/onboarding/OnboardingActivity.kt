@@ -88,9 +88,9 @@ class OnboardingActivity : DaggerAppCompatActivity() {
                     .scaleY(1f)
                     .setInterpolator(interpolator)
                     .withEndAction {
-                        postDelayed(1000) {
-                            (binding.logo.drawable as AnimatedVectorDrawable).start()
-                        }
+//                        postDelayed(1000) {
+//                            (binding.logo.drawable as AnimatedVectorDrawable).start()
+//                        }
                     }
             }
         }
