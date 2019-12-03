@@ -39,11 +39,11 @@ object ConferenceDataJsonParser {
         val jsonReader = com.google.gson.stream.JsonReader(unprocessedSessionData.reader())
 
         val gson = GsonBuilder()
-            .registerTypeAdapter(SessionTemp::class.java, SessionDeserializer())
-            .registerTypeAdapter(Tag::class.java, TagDeserializer())
-            .registerTypeAdapter(Speaker::class.java, SpeakerDeserializer())
-            .registerTypeAdapter(Room::class.java, RoomDeserializer())
-            .create()
+                .registerTypeAdapter(SessionTemp::class.java, SessionDeserializer())
+                .registerTypeAdapter(Tag::class.java, TagDeserializer())
+                .registerTypeAdapter(Speaker::class.java, SpeakerDeserializer())
+                .registerTypeAdapter(Room::class.java, RoomDeserializer())
+                .create()
 
         val tempData: TempConferenceData = gson.fromJson(jsonReader, TempConferenceData::class.java)
         return normalize(tempData)
@@ -57,31 +57,32 @@ object ConferenceDataJsonParser {
         data.sessions.forEach { session: SessionTemp ->
             val tags = data.tags.filter { it.tagName in session.tagNames }
             val newSession = Session(
-                id = session.id,
-                startTime = session.startTime,
-                endTime = session.endTime,
-                title = session.title,
-                abstract = session.abstract,
-                sessionUrl = session.sessionUrl,
-                liveStreamUrl = session.liveStreamUrl,
-                isLivestream = session.isLivestream,
-                youTubeUrl = session.youTubeUrl,
-                tags = tags,
-                displayTags = tags.filter { it.category == Tag.CATEGORY_TOPIC },
-                speakers = session.speakers.mapNotNull { data.speakers[it] }.toSet(),
-                photoUrl = session.photoUrl,
-                relatedSessions = session.relatedSessions,
-                room = data.rooms.firstOrNull { it.id == session.room }
+                    id = session.id,
+                    startTime = session.startTime,
+                    endTime = session.endTime,
+                    title = session.title,
+                    abstract = session.abstract,
+                    sessionUrl = session.sessionUrl,
+                    liveStreamUrl = session.liveStreamUrl,
+                    isLivestream = session.isLivestream,
+                    youTubeUrl = session.youTubeUrl,
+                    tags = tags,
+//                    displayTags = tags.filter { it.category == Tag.CATEGORY_TOPIC },
+                    displayTags = tags,
+                    speakers = session.speakers.mapNotNull { data.speakers[it] }.toSet(),
+                    photoUrl = session.photoUrl,
+                    relatedSessions = session.relatedSessions,
+                    room = data.rooms.firstOrNull { it.id == session.room }
             )
             sessions.add(newSession)
         }
 
         return ConferenceData(
-            sessions = sessions,
-            tags = data.tags,
-            speakers = data.speakers.values.toList(),
-            rooms = data.rooms,
-            version = data.version
+                sessions = sessions,
+                tags = data.tags,
+                speakers = data.speakers.values.toList(),
+                rooms = data.rooms,
+                version = data.version
         )
     }
 }
@@ -92,9 +93,9 @@ object ConferenceDataJsonParser {
  */
 @Keep
 data class TempConferenceData(
-    val sessions: List<SessionTemp>,
-    val speakers: Map<String, Speaker>,
-    val rooms: List<Room>,
-    val tags: List<Tag>,
-    val version: Int
+        val sessions: List<SessionTemp>,
+        val speakers: Map<String, Speaker>,
+        val rooms: List<Room>,
+        val tags: List<Tag>,
+        val version: Int
 )

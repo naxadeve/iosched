@@ -28,7 +28,6 @@ import org.threeten.bp.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static com.google.samples.apps.iosched.model.Tag.TYPE_SESSIONS;
 import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_AFTER_HOURS;
 import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_BIM_SESSION;
 import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_HONOUR;
@@ -71,16 +70,9 @@ public class AgendaJSONParser {
             boolean isDark = type.equalsIgnoreCase("keynote") || type.contains("session") || type.contains("after_hours")
                     || type.contains("speech") || type.contains("honour");
 
-            String title2 = agenda.optString("title_2");
+
             String start = agenda.optString("start");
             String end = agenda.optString("end");
-
-            if (!TextUtils.isEmpty(title2)) {
-                block = new Block(title2, type, getOrDefault(typeColorMAP, type),
-                        getOrDefault(typeColorMAP, type), isDark, ZonedDateTime.parse(start),
-                        ZonedDateTime.parse(end));
-                blocks.add(block);
-            }
 
 
             block = new Block(title, type, getOrDefault(typeColorMAP, type),
@@ -101,432 +93,137 @@ public class AgendaJSONParser {
 
 
     private final static String json = "[\n" +
-            "  {\n" +
-            "    \"title\": \"Registration\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"badge\",\n" +
-            "    \"start\": \"2019-12-10T08:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T09:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Introduction to the dignitaries\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"speech\",\n" +
-            "    \"start\": \"2019-12-10T09:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T09:05+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"National Anthem\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"speech\",\n" +
-            "    \"start\": \"2019-12-10T09:05+05:45\",\n" +
-            "    \"end\": \"2019-12-10T09:07+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Welcome Speech\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"speech\",\n" +
-            "    \"start\": \"2019-12-10T09:07+05:45\",\n" +
-            "    \"end\": \"2019-12-10T09:15+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Inauguration by Hon'ble Minister, MOLCPA (Chief Guest)\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"speech\",\n" +
-            "    \"start\": \"2019-12-10T09:15+05:45\",\n" +
-            "    \"end\": \"2019-12-10T09:17+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Remarks: Guests\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"remark\",\n" +
-            "    \"start\": \"2019-12-10T09:17+05:45\",\n" +
-            "    \"end\": \"2019-12-10T09:32+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Remarks: Guests\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"remark\",\n" +
-            "    \"start\": \"2019-12-10T09:32+05:45\",\n" +
-            "    \"end\": \"2019-12-10T09:40+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Remarks: ISPRS Representative\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"remark\",\n" +
-            "    \"start\": \"2019-12-10T09:40+05:45\",\n" +
-            "    \"end\": \"2019-12-10T09:50+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Remarks: Vice Chancellor, Kathmandu University\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"remark\",\n" +
-            "    \"start\": \"2019-12-10T09:50+05:45\",\n" +
-            "    \"end\": \"2019-12-10T10:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Felicitation of Brand Sponsors\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"honour\",\n" +
-            "    \"start\": \"2019-12-10T10:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T10:05+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Inauguration Speech: Hon'ble Minister (Chief Guest)\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"speech\",\n" +
-            "    \"start\": \"2019-12-10T10:05+05:45\",\n" +
-            "    \"end\": \"2019-12-10T10:20+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Closing Remarks\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"speech\",\n" +
-            "    \"start\": \"2019-12-10T10:20+05:45\",\n" +
-            "    \"end\": \"2019-12-10T10:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"TEA/COFFEE BREAK\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"meal\",\n" +
-            "    \"start\": \"2019-12-10T10:30+05:45\",\n" +
-            "    \"end\": \"2019-12-10T11:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Dr. Sunil Babu Shrestha\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"keynote\",\n" +
-            "    \"start\": \"2019-12-10T11:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T11:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Prof. Dr. J.A. Zevenbergen\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"keynote\",\n" +
-            "    \"start\": \"2019-12-10T11:30+05:45\",\n" +
-            "    \"end\": \"2019-12-10T12:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Dr. Sultan Kocaman\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"keynote\",\n" +
-            "    \"start\": \"2019-12-10T12:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T12:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Prof. Ruizhi CHEN, Wuhan University\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"keynote\",\n" +
-            "    \"start\": \"2019-12-10T12:30+05:45\",\n" +
-            "    \"end\": \"2019-12-10T13:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"LUNCH BREAK\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"meal\",\n" +
-            "    \"start\": \"2019-12-10T13:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T14:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Technical Session I\",\n" +
-            "    \"title_2\": \"Technical Session II\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T14:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T15:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 1\",\n" +
-            "    \"title_2\": \"Presentation 1\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T14:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T14:15+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 2\",\n" +
-            "    \"title_2\": \"Presentation 2\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T14:15+05:45\",\n" +
-            "    \"end\": \"2019-12-10T14:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 3\",\n" +
-            "    \"title_2\": \"Presentation 3\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T14:30+05:45\",\n" +
-            "    \"end\": \"2019-12-10T14:45+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presenation 4\",\n" +
-            "    \"title_2\": \"Presenation 4\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T14:45+05:45\",\n" +
-            "    \"end\": \"2019-12-10T15:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 5\",\n" +
-            "    \"title_2\": \"Presentation 5\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T15:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T15:15+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 6\",\n" +
-            "    \"title_2\": \"Presentation 6\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T15:15+05:45\",\n" +
-            "    \"end\": \"2019-12-10T15:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"BIM SESSION\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"bim_session\",\n" +
-            "    \"start\": \"2019-12-10T14:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T16:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"TEA/COFFEE BREAK\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"meal\",\n" +
-            "    \"start\": \"2019-12-10T15:30+05:45\",\n" +
-            "    \"end\": \"2019-12-10T16:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Technical Session III\",\n" +
-            "    \"title_2\": \"Technical Session IV\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T16:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T17:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 1\",\n" +
-            "    \"title_2\": \"Presentation 1\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T16:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T16:15+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 2\",\n" +
-            "    \"title_2\": \"Presentation 2\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T16:15+05:45\",\n" +
-            "    \"end\": \"2019-12-10T16:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 3\",\n" +
-            "    \"title_2\": \"Presentation 3\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T16:30+05:45\",\n" +
-            "    \"end\": \"2019-12-10T16:45+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presenation 4\",\n" +
-            "    \"title_2\": \"Presenation 4\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T16:45+05:45\",\n" +
-            "    \"end\": \"2019-12-10T17:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 5\",\n" +
-            "    \"title_2\": \"Presentation 5\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T17:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T17:15+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 6\",\n" +
-            "    \"title_2\": \"Presentation 6\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-10T17:15+05:45\",\n" +
-            "    \"end\": \"2019-12-10T17:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Closed Session ISPRS TC V/WG7\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"speech\",\n" +
-            "    \"start\": \"2019-12-10T16:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T18:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"WELCOME RECEPTION\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"after_hours\",\n" +
-            "    \"start\": \"2019-12-10T18:00+05:45\",\n" +
-            "    \"end\": \"2019-12-10T20:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"REGISTRATION + BREAKFAST\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"badge\",\n" +
-            "    \"start\": \"2019-12-11T08:00+05:45\",\n" +
-            "    \"end\": \"2019-12-11T09:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Opening Speaker\",\n" +
-            "    \"title_2\": \"Professor Dr. Kevin McDougall\",\n" +
-            "    \"type\": \"keynote\",\n" +
-            "    \"start\": \"2019-12-11T09:00+05:45\",\n" +
-            "    \"end\": \"2019-12-11T09:15+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Technical Session V\",\n" +
-            "    \"title_2\": \"Technical Session VI\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T09:15+05:45\",\n" +
-            "    \"end\": \"2019-12-11T09:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 1\",\n" +
-            "    \"title_2\": \"Presentation 1\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T09:30+05:45\",\n" +
-            "    \"end\": \"2019-12-11T09:45+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 2\",\n" +
-            "    \"title_2\": \"Presentation 2\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T09:45+05:45\",\n" +
-            "    \"end\": \"2019-12-11T10:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 3\",\n" +
-            "    \"title_2\": \"Presentation 3\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T10:00+05:45\",\n" +
-            "    \"end\": \"2019-12-11T10:15+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presenation 4\",\n" +
-            "    \"title_2\": \"Presenation 4\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T10:15+05:45\",\n" +
-            "    \"end\": \"2019-12-11T10:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 5\",\n" +
-            "    \"title_2\": \"Presentation 5\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T10:30+05:45\",\n" +
-            "    \"end\": \"2019-12-11T10:45+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 6\",\n" +
-            "    \"title_2\": \"Presentation 6\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T10:45+05:45\",\n" +
-            "    \"end\": \"2019-12-11T11:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Poster Session\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"showcase\",\n" +
-            "    \"start\": \"2019-12-11T09:15+05:45\",\n" +
-            "    \"end\": \"2019-12-11T12:15+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"TEA/COFFEE BREAK\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"meal\",\n" +
-            "    \"start\": \"2019-12-11T11:00+05:45\",\n" +
-            "    \"end\": \"2019-12-11T11:15+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Technical Session VII\",\n" +
-            "    \"title_2\": \"Technical Session VIII\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T11:15+05:45\",\n" +
-            "    \"end\": \"2019-12-11T12:45+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 1\",\n" +
-            "    \"title_2\": \"Presentation 1\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T11:15+05:45\",\n" +
-            "    \"end\": \"2019-12-11T11:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 2\",\n" +
-            "    \"title_2\": \"Presentation 2\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T11:30+05:45\",\n" +
-            "    \"end\": \"2019-12-11T11:45+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 3\",\n" +
-            "    \"title_2\": \"Presentation 3\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T11:45+05:45\",\n" +
-            "    \"end\": \"2019-12-11T12:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presenation 4\",\n" +
-            "    \"title_2\": \"Presenation 4\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T12:00+05:45\",\n" +
-            "    \"end\": \"2019-12-11T12:15+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 5\",\n" +
-            "    \"title_2\": \"Presentation 5\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T12:15+05:45\",\n" +
-            "    \"end\": \"2019-12-11T12:30+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Presentation 6\",\n" +
-            "    \"title_2\": \"Presentation 6\",\n" +
-            "    \"type\": \"session\",\n" +
-            "    \"start\": \"2019-12-11T12:30+05:45\",\n" +
-            "    \"end\": \"2019-12-11T12:45+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"LUNCH BREAK\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"meal\",\n" +
-            "    \"start\": \"2019-12-11T12:45+05:45\",\n" +
-            "    \"end\": \"2019-12-11T14:00+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Introduction to the dignitaries\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"speech\",\n" +
-            "    \"start\": \"2019-12-11T14:00+05:45\",\n" +
-            "    \"end\": \"2019-12-11T14:05+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Technical Report\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"showcase\",\n" +
-            "    \"start\": \"2019-12-11T14:05+05:45\",\n" +
-            "    \"end\": \"2019-12-11T14:20+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Resolution\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"showcase\",\n" +
-            "    \"start\": \"2019-12-11T14:20+05:45\",\n" +
-            "    \"end\": \"2019-12-11T14:40+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Guest Remarks\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"remark\",\n" +
-            "    \"start\": \"2019-12-11T14:40+05:45\",\n" +
-            "    \"end\": \"2019-12-11T14:50+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Vote of Thanks\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"remark\",\n" +
-            "    \"start\": \"2019-12-11T14:50+05:45\",\n" +
-            "    \"end\": \"2019-12-11T15:15+05:45\"\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"title\": \"Closing Remarks\",\n" +
-            "    \"title_2\": \"\",\n" +
-            "    \"type\": \"remark\",\n" +
-            "    \"start\": \"2019-12-11T15:15+05:45\",\n" +
-            "    \"end\": \"2019-12-11T15:30+05:45\"\n" +
-            "  }\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T08:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T10:30:00+05:45\",\n" +
+            "        \"title\": \"OPENING CEREMONY\",\n" +
+            "        \"type\": \"badge\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T10:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T11:00:00+05:45\",\n" +
+            "        \"title\": \"TEA\",\n" +
+            "        \"type\": \"meal\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T11:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T13:00:00+05:45\",\n" +
+            "        \"title\": \"KEY NOTE SESSION\",\n" +
+            "        \"type\": \"keynote\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T13:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T14:00:00+05:45\",\n" +
+            "        \"title\": \"LUNCH\",\n" +
+            "        \"type\": \"meal\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T14:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T15:30:00+05:45\",\n" +
+            "        \"title\": \"TECHINCAL SESSION 1 (Advanced Geospatial Technologies: Urban)\",\n" +
+            "        \"type\": \"session\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T14:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T15:30:00+05:45\",\n" +
+            "        \"title\": \"TECHINCAL SESSION 2 (Curriculum Development for GIS Education Outreach)\",\n" +
+            "        \"type\": \"session\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T14:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T16:30:00+05:45\",\n" +
+            "        \"title\": \"BIM SESSION\",\n" +
+            "        \"type\": \"session\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T16:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T17:45:00+05:45\",\n" +
+            "        \"title\": \"Closed Session\",\n" +
+            "        \"type\": \"session\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T15:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T16:00:00+05:45\",\n" +
+            "        \"title\": \"LUNCH\",\n" +
+            "        \"type\": \"meal\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T16:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T17:30:00+05:45\",\n" +
+            "        \"title\": \"TECHINCAL SESSION 3 (Remote Sensing and Space Education: RS for Forest Management)\",\n" +
+            "        \"type\": \"session\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T16:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T17:30:00+05:45\",\n" +
+            "        \"title\": \"TECHINCAL SESSION 4 (Spatial Data Infrastructure and Internet of Things (IOT))\",\n" +
+            "        \"type\": \"session\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T18:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T20:00:00+05:45\",\n" +
+            "        \"title\": \"Partyasd\",\n" +
+            "        \"type\": \"after_hours\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T08:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T10:00:00+05:45\",\n" +
+            "        \"title\": \"Opening\",\n" +
+            "        \"type\": \"badge\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T10:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T11:30:00+05:45\",\n" +
+            "        \"title\": \"TECHINCAL SESSION 5 (Advanced Geospatial Technologies- Ecology and Geography)\",\n" +
+            "        \"type\": \"session\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T10:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T11:30:00+05:45\",\n" +
+            "        \"title\": \"TECHINCAL SESSION 6 (Land Management)\",\n" +
+            "        \"type\": \"session\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T11:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T12:00:00+05:45\",\n" +
+            "        \"title\": \"Lunch\",\n" +
+            "        \"type\": \"meal\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T12:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T13:30:00+05:45\",\n" +
+            "        \"title\": \"TECHINCAL SESSION 7 (Remote Sensing and Space Education: RS for Natural Disaster)\",\n" +
+            "        \"type\": \"session\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T12:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T13:30:00+05:45\",\n" +
+            "        \"title\": \"TECHINCAL SESSION 8 (Exploring International Collaboration)\",\n" +
+            "        \"type\": \"session\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T13:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T14:30:00+05:45\",\n" +
+            "        \"title\": \"Lunch\",\n" +
+            "        \"type\": \"Lunch\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T14:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T15:00:00+05:45\",\n" +
+            "        \"title\": \"Professional Networking (Informal)\",\n" +
+            "        \"type\": \"badge\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T15:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T16:30:00+05:45\",\n" +
+            "        \"title\": \"Closing ceremony\",\n" +
+            "        \"type\": \"badge\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"start\": \"2019-12-10T16:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T17:00:00+05:45\",\n" +
+            "        \"title\": \"Hi-Tea\",\n" +
+            "        \"type\": \"after_hours\\n\"\n" +
+            "    }\n" +
             "]";
 }
