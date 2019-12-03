@@ -72,7 +72,7 @@
                 app:layout_constraintTop_toBottomOf="@id/settings_choose_theme" />
 
             <Switch
-                android:visibility="gone"
+                android:visibility="visible"
                 android:id="@+id/settings_enable_notifications"
                 style="@style/TextAppearance.IOSched.SettingsSwitch"
                 android:layout_width="0dp"
