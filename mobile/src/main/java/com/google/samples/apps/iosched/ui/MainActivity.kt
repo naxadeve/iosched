@@ -72,9 +72,6 @@ class MainActivity : DaggerAppCompatActivity() {
             mainActivityViewModel.refreshConferenceData()
         }
 
-        mainActivityViewModel.navigateToUserAttendeeDialogAction.observe(this, EventObserver {
-            openAttendeeDialog()
-        })
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {

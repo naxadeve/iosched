@@ -119,7 +119,7 @@
     <string name="swap" translation_description="The label of the button to swap the reservation with another.">Swap</string>
 
     <!-- Notifications preference dialog -->
-    <string name="notifications_preference_dialog_title" translation_description="The title of the dialog for the notifications preference">Android Dev Summit Notifications</string>
+    <string name="notifications_preference_dialog_title" translation_description="The title of the dialog for the notifications preference">Notifications</string>
     <string name="notifications_preference_dialog_content" translation_description="The content of the dialog for the notifications preference">Would you like to be notified when your starred events are about to start? You can change this setting under \"Info > Settings\" at any time.</string>
     <string name="notifications_preference_dialog_content_instant" translation_description="The content of the dialog for the notifications preference to show if the user is using the Instant App">If you would like to be notified when your starred events are about to start, you will need to install the app.</string>
     <string name="no" translation_description="Negative answer to the question \'Would you like to receive notification?\'">No</string>
@@ -335,12 +335,14 @@
     <string name="user_attendee_dialog_in_person">In person</string>
 
     <string name="lmtc_parking_description">Free parking will be available to attendees. Please park in LMTC premise</string>
-    <string name="lmtc_meal_description">Free tea and lunch will be provided to all attendees</string>
-    <string name="lmtc_after_hours_description"> All registered attendees are invited to the party in the evening </string>
+    <string name="lmtc_meal_description">Free breakfast, tea and lunch will be provided to all attendees</string>
+    <string name="lmtc_after_hours_description"> All registered attendees are invited to the welcome reception in the evening  </string>
     <string name="lmtc_how_to_get_there_title"> How to get to the venue? </string>
-    <string name="lmtc_how_to_get_there_description"> Coming soon</string>
+    <string name="lmtc_how_to_get_there_description">There will be free bus services from Ratnapark to Workshop Venue
+Dhulikhel to Workshop Venue
+</string>
     <string name="lmtc_will_there_be_internet_title"> Will there be internet access?</string>
-    <string name="lmtc_will_there_be_internet_description"> Coming soon</string>
+    <string name="lmtc_will_there_be_internet_description"> Yes, free wifi will be available in the workshop areas</string>
     <string name="lmtc_welcome_message_description"><![CDATA[
       <h2> Welcome </h2><p>Dear Colleagues and Geospatial enthusiasts, </p><p>On behalf of organizing committee, I take great pride in welcoming all of you to attend this two-day International Event on December 10- 11, 2019 organized by <a href="http://lmtc.gov.np/" target="_blank">Land Management Training Center </a> in collaboration with International Society for Remote Sensing and Photogrammetry (<a href="http://www2.isprs.org/commissions/comm5/wg7.html" target="_blank">TC V / WG 7 </a> and <a href="http://www2.isprs.org/commissions/comm4/wg6.html" target="_blank">TC IV / WG 6</a>), <a href="https://www.facebook.com/nepalrsps/" target="_blank">Nepal Remote Sensing and Photogrammetric Society </a>and <a href="http://charteredsurveyors.org.np/contact-us/" target="_blank">Nepal Institution of Chartered Surveyors</a> in Dhulikhel, a naturally majestic city of Nepal rich in ancient traditions and culture.</p><p>Geospatial domain has the characteristics of rapid development and adoption of newer technologies. This calls for a challenging task of harnessing recent scientific advances across multiple fields of education and research; then accelerate and guide evolution of geospatial technology. To ensure this, this workshop incorporates a wide spectrum of themes and, will provide a perfect global networking platform as it brings together renowned professionals from all over the world. The primary goal of this workshop is to cater exchange of recent research achievements and break-through ideas on cutting edge geospatial technologies and latest trends in geospatial education amongst multi-disciplinary group of attendees. This international workshop also aims to flourish collaborative relationship among national/international institutions, academicians and professionals for mutual benefit through knowledge sharing and technology transfer. </p><p>I believe especially our international participants will enjoy the scenic beauty of naturally enriched mountains during your stay in Nepal. I sincerely invite you to join us to make this workshop a fruitful and memorable event.</p><p>I am looking forward to meeting you all soon!</p><p><strong>Warmest regards,</strong><br> Ganesh Prasad Bhatta<br> (Executive Director, LMTC)<br> Chair, Organizing Committee</p>
 
@@ -352,33 +354,593 @@
     </string>
 
     <string name="lmtc_advisory_committee_title">Advisory Committee</string>
-    <string name="lmtc_advisory_committee_description">Coming Soon</string>
+    <string name="lmtc_advisory_committee_description">
+        <![CDATA[
+            <div class="row clearfix">
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Chair</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Surya Prasad Gautam</strong> </li>
+                        <li class="list-inline-item"> Secretary, <a href="http://molcpa.gov.np/" target="blank">Ministry of   Land Management, Cooperatives and Poverty Alleviation</a>  </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Christian Heipke, </strong> </li>
+                        <li class="list-inline-item"> President, <a href="http://www2.isprs.org/commissions/comm5.html">ISPRS </a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> LENA HALOUNOVÁ, </strong> </li>
+                        <li class="list-inline-item"> Secretary General, <a href="http://www2.isprs.org/commissions/comm5.html">ISPRS </a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Dr. Senthil A Kumar, </strong> </li>
+                        <li class="list-inline-item"> TC V President, <a href="http://www2.isprs.org/commissions/comm5.html" target="_blank">ISPRS</a> </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Janak Raj Joshi, </strong> </li>
+                        <li class="list-inline-item"> Joint Secretary, <a href="http://molcpa.gov.np/">MOLCPA</a> </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Prakash Joshi</strong> </li>
+                        <li class="list-inline-item">Director General, <a href="http://dos.gov.np/">Survey Department
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Krishna Prasad Gyawali</strong> </li>
+                        <li class="list-inline-item">Director General,<a href="http://dolma.gov.np/">DOLMA </a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member Secretary</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Ganesh Prasad Bhatta</strong> </li>
+                        <li class="list-inline-item"> Executive Director, <a href="https://www.lmtc.gov.np/">LMTC </a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+
+     ]]>
+    </string>
 
     <string name="lmtc_organizing_committee_title"> Organizing Committee</string>
-    <string name="lmtc_organizing_committee_description"> Coming soon</string>
+    <string name="lmtc_organizing_committee_description">
+     <![CDATA[
+            <div class="row clearfix">
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Chair</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Ganesh Prasad Bhatta</strong> </li>
+                        <li class="list-inline-item"> Executive Director, LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Co-Chair</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Rabin Kaji Sharma, </strong> </li>
+                        <li class="list-inline-item"> President, NRSPS </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Co-Chair</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong>Mr. Punya Prasad Oli </strong> </li>
+                        <li class="list-inline-item"> President, NICS </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Susheel Dangol </strong> </li>
+                        <li class="list-inline-item"> Chief Survey Officier, Survey Department </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Dr. Devraj Paudyal </strong> </li>
+                        <li class="list-inline-item"> ISPRS TC IV / WG 6 </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong>Er. Laxmi Thapa </strong> </li>
+                        <li class="list-inline-item"> ISPRS TC V /WG 7 </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member </h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Lekha Nath Dahal </strong> </li>
+                        <li class="list-inline-item"> Director, LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member Secretary</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Tanka  Prasad Dahal </strong> </li>
+                        <li class="list-inline-item"> Director, LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+        ]]>
+    </string>
 
 
     <string name="lmtc_event_managment_committee_title">Event Management Committee</string>
-    <string name="lmtc_event_managment_committee_description"> Coming Soon</string>
+    <string name="lmtc_event_managment_committee_description">
+        <![CDATA[
+            <div class="row clearfix">
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Chair</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Rajendra Raut</strong> </li>
+                        <li class="list-inline-item"> Director, LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Dr. Pradeep Sapkota Upadhyaya,&nbsp;</strong>LMTC</li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong>Mr. Hari Prasad Lawaju </strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong>Er. Sanjeevan Shrestha </strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong>Mr. Sanjaya Manadhar</strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong>Er. Shivaji K.C. </strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member </h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong>Er. Sudarsan Gautam </strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member </h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Govinda Ghimire </strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member </h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Ms. Arati Adhikari </strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member </h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Er. Binod Humagain </strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member </h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Er. Maheshwor Karki </strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member </h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Er. Lava Prasad Kuinkel </strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member </h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Laxman Banjara </strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member Secretary</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong>Er. Bhuwan Ranjit </strong> </li>
+                        <li class="list-inline-item"> LMTC </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+
+
+         ]]>
+    </string>
 
 
     <string name="lmtc_international_program_committee_title">International Program Committee</string>
-    <string name="lmtc_international_program_committee_description"> Coming Soon</string>
+    <string name="lmtc_international_program_committee_description">
+        <![CDATA[
+
+
+<div class="row clearfix">
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member</h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong>Dr. Senthil A Kumar</strong> </li>
+            <li class="list-inline-item"> TC V President</li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member</h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong>Vladimir Seredovich</strong> </li>
+            <li class="list-inline-item"> ISPRS TC V / WG 7 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member</h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong>Gottfried Konecny </strong> </li>
+            <li class="list-inline-item"> ISPRS TC V / WG 7 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong>Karel Vach, Karel Pavelka </strong> </li>
+            <li class="list-inline-item"> ISPRS TC V / WG 7 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong>Radovan Haloun </strong> </li>
+            <li class="list-inline-item"> ISPRS TC V / WG 7 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong>Markéta Potůčková </strong> </li>
+            <li class="list-inline-item"> ISPRS TC V / WG 7 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong>Argina Novitskaya </strong> </li>
+            <li class="list-inline-item"> ISPRS TC V / WG 7 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong>Roman Shults </strong> </li>
+            <li class="list-inline-item"> ISPRS TC V / WG 7 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong> Eugene Levin </strong> </li>
+            <li class="list-inline-item"> ISPRS TC V / WG 7 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong> Jurate Visockiene </strong> </li>
+            <li class="list-inline-item"> ISPRS TC V / WG 7 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong> Egle Tumeliene </strong> </li>
+            <li class="list-inline-item"> ISPRS TC V / WG 7 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member</h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong> Sisi Zlatanova </strong> </li>
+            <li class="list-inline-item"> ISPRS TC IV President </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong> Marguerite Madden </strong> </li>
+            <li class="list-inline-item"> ISPRS TC IV / 6 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong> Giuseppina Vacca</strong> </li>
+            <li class="list-inline-item"> ISPRS TC IV / 6 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong> Mingshu Wang </strong> </li>
+            <li class="list-inline-item"> ISPRS TC IV / 6 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong> Reiner Jaeger </strong> </li>
+            <li class="list-inline-item"> TC V / WG 7 </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member</h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong> Dr. Devraj Paudyal </strong> </li>
+            <li class="list-inline-item"> ISPRS TC IV/WG 6</li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member Secretary </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"> <strong> Er. Laxmi Thapa </strong> </li>
+            <li class="list-inline-item"> ISPRS TC V /WG 7</li>
+         </ul>
+      </div>
+   </div>
+</div>
+
+
+         ]]>
+    </string>
 
     <string name="lmtc_technical_committee_title">Technical Committee</string>
-    <string name="lmtc_technical_committee_description">Coming Soon</string>
+    <string name="lmtc_technical_committee_description">
+        <![CDATA[
+
+
+<div class="row clearfix">
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Chair</h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"><strong><a href="https://staffprofile.usq.edu.au/Profile/Kevin-McDougall">Professor Dr. Kevin McDougall</a>,</strong></li>
+            <li class="list-inline-item">University of Southern Queensland, Australia</li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member</h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"><strong>&nbsp;Dr. Pradeep Sapkota Upadhyaya</strong></li>
+            <li class="list-inline-item"> LMTC </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member</h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"><strong>Dr. Reshma Shrestha</strong></li>
+            <li class="list-inline-item">Kathmandu University</li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"><strong><a href="https://www.utas.edu.au/profiles/staff/geography-spatial/jagannath-aryal">Dr. Jagannath Aryal</a></strong></li>
+            <li class="list-inline-item">University of Tasmania</li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"><strong><a href="https://www.wur.nl/en/Persons/Arun-AK-Arun-Pratihast-PhD.htm">Dr. Arun Pratihast</a></strong></li>
+            <li class="list-inline-item">Wageningen University and Research</li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-12 col-md-12"> <strong><b>Facilitators:</b>  Er. Bhuwan Ranjit, Er. Sanjeevan Shrestha, Er. Laxmi Thapa</strong></div>
+</div>
+
+
+         ]]>
+    </string>
 
     <string name="lmtc_workshop_secretariat_title">Workshop Secretariat</string>
-    <string name="lmtc_workshop_secretariat_description"> Coming Soon</string>
-    <string name='naxa_url' translatable="false" >https://naxa.com.np/home/</string>
+    <string name="lmtc_workshop_secretariat_description">
+    <![CDATA[
 
-    <string name="event_keynote_title" >Keynote</string>
-    <string name="event_keynote_description" >Coming Soon</string>
 
-    <string name="event_technical_session_title" >Technical Session</string>
-    <string name="event_technical_session_description" >Coming Soon</string>
+<div class="row clearfix">
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Chair</h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"><strong>Mr. Tanka Prasad Dahal,</strong></li>
+            <li class="list-inline-item">LMTC</li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member</h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"><strong>&nbsp;Er. Bhuwan Ranjit,</strong></li>
+            <li class="list-inline-item"> LMTC </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member</h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"><strong>Er. Sanjeevan Shrestha,</strong></li>
+            <li class="list-inline-item">Kathmandu University</li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-body">
+         <h4 class="card-title">Member Secretary, </h4>
+         <ul class="list-inline">
+            <li class="list-inline-item"><strong>Er. Laxmi Thapa,</strong></li>
+            <li class="list-inline-item">LMTC</li>
+         </ul>
+      </div>
+   </div>
+</div>
 
-    <string name="event_bim_session_title" >Bim Session</string>
-    <string name="event_bim_session_description" >Coming Soon</string>
+
+         ]]>
+    </string>
+    <string name='naxa_url' translatable="false">https://naxa.com.np/home/</string>
+
+    <string name="event_keynote_title">Keynote</string>
+    <string name="event_keynote_description">Coming Soon</string>
+
+    <string name="event_technical_session_title">Technical Session</string>
+    <string name="event_technical_session_description">Coming Soon</string>
+
+    <string name="event_bim_session_title">Bim Session</string>
+    <string name="event_bim_session_description">Coming Soon</string>
 
 </resources>

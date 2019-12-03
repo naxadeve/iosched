@@ -402,7 +402,7 @@ fun generateBlocks(dataSource: AppConfigDataSource): List<Block> {
 private const val LABEL_REGISTRATION_DEFAULT = "Registration"
 private const val LABEL_KEYNOTE_DEFAULT = "Keynote"
 private const val LABEL_SESSIONS_DEFAULT = "Sessions"
-private const val LABEL_BREAKFAST_DEFAULT = "Breakfast"
+private const val LABEL_BREAKFAST_DEFAULT = "Brgit stateakfast"
 private const val LABEL_LUNCH_DEFAULT = "Lunch"
 private const val LABEL_TEA_BREAK_DEFAULT = "Tea/Cofee Break"
 private const val LABEL_PARTY_DEFAULT = "Party"
