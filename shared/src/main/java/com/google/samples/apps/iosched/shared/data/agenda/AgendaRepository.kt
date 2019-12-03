@@ -38,7 +38,7 @@ class DefaultAgendaRepository(
 ) : AgendaRepository {
 
     override suspend fun getAgenda(forceRefresh: Boolean): List<Block> {
-        if (false) {
+        if (true) {
             appConfigDataSource.syncStrings()
         }
         return AgendaJSONParser.getAgenda()

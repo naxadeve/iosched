@@ -17,11 +17,11 @@
 <defaultsMap>
     <entry>
         <key>wifi_ssid</key>
-        <value>androiddevsummit</value>
+        <value>lmtc-conf-wifi-ssid</value>
     </entry>
     <entry>
         <key>wifi_password</key>
-        <value>androiddevsummit</value>
+        <value>lmtc1234</value>
     </entry>
     <entry>
         <key>registration_day1_start_time</key>
