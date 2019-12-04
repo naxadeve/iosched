@@ -16,7 +16,9 @@
 
 package com.google.samples.apps.iosched.ui.info
 
+import android.content.Intent
 import android.net.wifi.WifiConfiguration
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -28,9 +30,11 @@ import com.google.samples.apps.iosched.shared.domain.logistics.LoadWifiInfoUseCa
 import com.google.samples.apps.iosched.shared.result.Event
 import com.google.samples.apps.iosched.shared.result.data
 import com.google.samples.apps.iosched.shared.util.map
+import com.google.samples.apps.iosched.ui.MapActivity
 import com.google.samples.apps.iosched.ui.SnackbarMessage
 import com.google.samples.apps.iosched.util.wifi.WifiInstaller
 import javax.inject.Inject
+import kotlin.coroutines.coroutineContext
 
 class EventInfoViewModel @Inject constructor(
     loadWifiInfoUseCase: LoadWifiInfoUseCase,
@@ -50,10 +54,17 @@ class EventInfoViewModel @Inject constructor(
     val openUrlEvent: LiveData<Event<String>>
         get() = _openUrlEvent
 
+    private val _openSiteMapEvent = MutableLiveData<Event<String>>()
+    val openSiteMapEvent: LiveData<Event<String>> get() = _openSiteMapEvent
+
     // TODO: Enable when final
     private val _showWifi = MutableLiveData<Boolean>().apply { value = true }
     val showWifi: LiveData<Boolean>
         get() = _showWifi
+
+    fun onSiteMapOpen(){
+        _openSiteMapEvent.postValue(Event("open"))
+    }
 
     fun onWifiConnect() {
         val ssid = wifiSsid.value

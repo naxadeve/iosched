@@ -942,5 +942,7 @@ Dhulikhel to Workshop Venue
 
     <string name="event_bim_session_title">Bim Session</string>
     <string name="event_bim_session_description">Coming Soon</string>
+    <string name="event_site_map_header">SITE MAP</string>
+    <string name="close">CLOSE</string>
 
 </resources>

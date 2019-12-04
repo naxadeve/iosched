@@ -31,6 +31,7 @@ import com.google.samples.apps.iosched.R
 import com.google.samples.apps.iosched.databinding.FragmentInfoEventBinding
 import com.google.samples.apps.iosched.shared.util.TimeUtils
 import com.google.samples.apps.iosched.shared.util.viewModelProvider
+import com.google.samples.apps.iosched.ui.MapActivity
 import com.google.samples.apps.iosched.ui.messages.SnackbarMessageManager
 import com.google.samples.apps.iosched.ui.setUpSnackbar
 import com.google.samples.apps.iosched.widget.FadingSnackbar
@@ -38,14 +39,16 @@ import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
 class EventFragment : DaggerFragment() {
-    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
-    @Inject lateinit var snackbarMessageManager: SnackbarMessageManager
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    @Inject
+    lateinit var snackbarMessageManager: SnackbarMessageManager
     private lateinit var eventInfoViewModel: EventInfoViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         context ?: return null
         eventInfoViewModel = viewModelProvider(viewModelFactory)
@@ -66,7 +69,14 @@ class EventFragment : DaggerFragment() {
             val url = it?.getContentIfNotHandled() ?: return@Observer
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
         })
+
+        eventInfoViewModel.openSiteMapEvent.observe(this, Observer {
+            val intent = Intent(requireActivity(), MapActivity::class.java)
+            startActivity(intent)
+        })
     }
+
+
 }
 
 @BindingAdapter("countdownVisibility")

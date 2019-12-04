@@ -73,6 +73,9 @@
         <activity
             android:name=".ui.onboarding.OnboardingActivity"
             android:theme="@style/AppTheme.Onboarding" />
+        <activity
+            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".ui.MapActivity" />
 
         <!-- By default, these are not exported since they do not have an intent filter.
          However, explicitly saying exported="false" to communicate that these are not for
