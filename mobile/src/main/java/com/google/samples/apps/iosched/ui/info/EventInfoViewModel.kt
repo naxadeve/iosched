@@ -30,6 +30,7 @@ import com.google.samples.apps.iosched.shared.domain.logistics.LoadWifiInfoUseCa
 import com.google.samples.apps.iosched.shared.result.Event
 import com.google.samples.apps.iosched.shared.result.data
 import com.google.samples.apps.iosched.shared.util.map
+import com.google.samples.apps.iosched.shared.util.postValueIfNew
 import com.google.samples.apps.iosched.ui.MapActivity
 import com.google.samples.apps.iosched.ui.SnackbarMessage
 import com.google.samples.apps.iosched.util.wifi.WifiInstaller
@@ -63,7 +64,7 @@ class EventInfoViewModel @Inject constructor(
         get() = _showWifi
 
     fun onSiteMapOpen(){
-        _openSiteMapEvent.postValue(Event("open"))
+        _openSiteMapEvent.postValueIfNew(Event("open"))
     }
 
     fun onWifiConnect() {

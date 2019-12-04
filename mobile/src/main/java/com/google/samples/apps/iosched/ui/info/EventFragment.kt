@@ -72,7 +72,11 @@ class EventFragment : DaggerFragment() {
 
         eventInfoViewModel.openSiteMapEvent.observe(this, Observer {
             val intent = Intent(requireActivity(), MapActivity::class.java)
-            startActivity(intent)
+            val url = it?.getContentIfNotHandled() ?: return@Observer
+            startActivity(intent);
+
+
+
         })
     }
 
