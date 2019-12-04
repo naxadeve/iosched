@@ -348,94 +348,102 @@ Dhulikhel to Workshop Venue
 
     ]]>
     </string>
-    <string name="lmtc_welcome_message_title">Message from (Executive Director, LMTC)\nChair, Organizing Committee</string>
-
-    <string name="lmtc_faq_label" translation_description="Label for link to FAQ on website.">International Workshop on \'Capacity building and Education Outreach in Advanced Geospatial Technologies and Land Management\’
-    </string>
-
-    <string name="lmtc_advisory_committee_title">Advisory Committee</string>
-    <string name="lmtc_advisory_committee_description">
+    <string name="lmtc_hotel_info_title">Will there be accommodation? </string>
+    <string name="lmtc_hotel_info_description">
         <![CDATA[
-            <div class="row clearfix">
-               <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="card-body">
-                     <h4 class="card-title">Chair</h4>
-                     <ul class="list-inline">
-                        <li class="list-inline-item"> <strong> Surya Prasad Gautam</strong> </li>
-                        <li class="list-inline-item"> Secretary, <a href="http://molcpa.gov.np/" target="blank">Ministry of   Land Management, Cooperatives and Poverty Alleviation</a>  </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="card-body">
-                     <h4 class="card-title">Member</h4>
-                     <ul class="list-inline">
-                        <li class="list-inline-item"> <strong> Christian Heipke, </strong> </li>
-                        <li class="list-inline-item"> President, <a href="http://www2.isprs.org/commissions/comm5.html">ISPRS </a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="card-body">
-                     <h4 class="card-title">Member</h4>
-                     <ul class="list-inline">
-                        <li class="list-inline-item"> <strong> LENA HALOUNOVÁ, </strong> </li>
-                        <li class="list-inline-item"> Secretary General, <a href="http://www2.isprs.org/commissions/comm5.html">ISPRS </a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="card-body">
-                     <h4 class="card-title">Member</h4>
-                     <ul class="list-inline">
-                        <li class="list-inline-item"> <strong> Dr. Senthil A Kumar, </strong> </li>
-                        <li class="list-inline-item"> TC V President, <a href="http://www2.isprs.org/commissions/comm5.html" target="_blank">ISPRS</a> </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="card-body">
-                     <h4 class="card-title">Member</h4>
-                     <ul class="list-inline">
-                        <li class="list-inline-item"> <strong> Janak Raj Joshi, </strong> </li>
-                        <li class="list-inline-item"> Joint Secretary, <a href="http://molcpa.gov.np/">MOLCPA</a> </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="card-body">
-                     <h4 class="card-title">Member</h4>
-                     <ul class="list-inline">
-                        <li class="list-inline-item"> <strong> Mr. Prakash Joshi</strong> </li>
-                        <li class="list-inline-item">Director General, <a href="http://dos.gov.np/">Survey Department
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="card-body">
-                     <h4 class="card-title">Member</h4>
-                     <ul class="list-inline">
-                        <li class="list-inline-item"> <strong> Mr. Krishna Prasad Gyawali</strong> </li>
-                        <li class="list-inline-item">Director General,<a href="http://dolma.gov.np/">DOLMA </a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="card-body">
-                     <h4 class="card-title">Member Secretary</h4>
-                     <ul class="list-inline">
-                        <li class="list-inline-item"> <strong> Mr. Ganesh Prasad Bhatta</strong> </li>
-                        <li class="list-inline-item"> Executive Director, <a href="https://www.lmtc.gov.np/">LMTC </a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
+<p>There are many hotels, including five stars in Dhulikhel. Considering the facilities available in budget price, following hotels are endorsed: </p>
+
+
+<h3><a href="http://www.sarathihotel.com" target="_blank">Hotel Sarathi</a></h3>
+<p>Dhulikhel, Kavrepalanchok, Nepal <br>
+   Tel No: +977-011-490884, 490994<br>
+   Email: info@sarathihotel.com<br>
+   URL: <a href="http://www.sarathihotel.com" target="_blank">www.sarathihotel.com</a>
+</p>
+<h3><a href="http://www.himalayanhorizon.com" target="_blank">Hotel Himalayan Horizon </a></h3>
+<p>Dhulikhel, Kavrepalanchok, Nepal <br>
+   Tel No: +977- 014225092, 4247183<br>
+   Email: horizondhulikhel@yahoo.com<br>
+   URL: <a href="http://www.himalayanhorizon.com" target="_blank">www.himalayanhorizon.com</a>
+</p>
+</div>
+<h3><a href="http://dhulikhellodgeresort.com/" target="_blank">Dhulikhel Lodge Resort </a></h3>
+<p>Dhulikhel, Kavrepalanchok, Nepal <br>
+   Tel No: +977- 014225092, 4247183<br>
+   Email: dlrdhuli@gmail.com<br>
+   URL: <a href="http://www.dhulikhellodgeresort.com" target="_blank">www.dhulikhellodgeresort.com/</a>
+</p>
+
+
+         ]]>
+    </string>
+    <string name="lmtc_tour_title">Social Tour</string>
+    <string name="lmtc_tour_description">
+           <![CDATA[
+           <h3>Bhaktapur-Pashupati-Baudhha City Tour</h3>
+
+<ul>
+  <li>Per Person  (Group of 14 People) : Rs. 4700/-</li>
+  <li>Per Person (Group of 7 People) :  Rs.6000/-</li>
+</ul>
+
+<h3>Dhulikhel-Namobuddha Site Seeing</h3>
+
+<ul>
+  <li>Per Person  (Group of 14 People) : Rs. 2500/-</li>
+  <li>Per Person (Group of 7 People) :  Rs.3800/-</li>
+</ul>
+
+<h3>Special Local Attractions </h3>
+      <ol>
+        <li>
+        <a href="http://world-wideadventure.com"> Zeap Line Dhulikhel</a>
+        </li>
+        <li>
+          Bungy Jumping- Bhotekoshi-<a href="http://www.thelastresort.com.np"> The Last Resort  </a>      </li>
+
+      </ol>
+<small class="text-danger">** Workshop registration does not include the social tour and special Local Attraction charges.</small>
+
 
      ]]>
     </string>
 
+    <string name="lmtc_contact_title">Contact Information</string>
+    <string name="lmtc_contact_description">
+                <![CDATA[
+                 <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>Contact us using any method below.</p>
+          </div>
+          <div class="row contact-info">
+            <div class="col-md-4">
+              <div class="contact-address"> <i class="ion-ios-location-outline"></i>
+                <h3>Address</h3>
+                <address>
+                Dhulikhel, Nepal
+                </address>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="contact-phone"> <i class="ion-ios-telephone-outline"></i>
+                <h3>Phone Number</h3>
+                <p><a href="tel:+977-011- 415055 / 51
+              ">+977-011- 415055 / 51 </a></p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="contact-email"> <i class="ion-ios-email-outline"></i>
+                <h3>Email</h3>
+                <p><a href="mailto:info.workshopnepal2019@gmail.com">info.workshopnepal2019@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          ]]>
+
+
+    </string>
     <string name="lmtc_organizing_committee_title"> Organizing Committee</string>
     <string name="lmtc_organizing_committee_description">
      <![CDATA[
@@ -932,6 +940,92 @@ Dhulikhel to Workshop Venue
 
          ]]>
     </string>
+    <string name="lmtc_faq_label" translation_description="Label for link to FAQ on website.">
+        International Workshop on \'Capacity building and Education Outreach in Advanced Geospatial Technologies and Land Management\’</string>
+
+    <string name="lmtc_welcome_message_title">Message from (Executive Director, LMTC)\nChair, Organizing Committee</string>
+    <string name="lmtc_advisory_committee_title">Advisory Committee</string>
+    <string name="lmtc_advisory_committee_description">
+        <![CDATA[
+            <div class="row clearfix">
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Chair</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Surya Prasad Gautam</strong> </li>
+                        <li class="list-inline-item"> Secretary, <a href="http://molcpa.gov.np/" target="blank">Ministry of   Land Management, Cooperatives and Poverty Alleviation</a>  </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Christian Heipke, </strong> </li>
+                        <li class="list-inline-item"> President, <a href="http://www2.isprs.org/commissions/comm5.html">ISPRS </a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> LENA HALOUNOVÁ, </strong> </li>
+                        <li class="list-inline-item"> Secretary General, <a href="http://www2.isprs.org/commissions/comm5.html">ISPRS </a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Dr. Senthil A Kumar, </strong> </li>
+                        <li class="list-inline-item"> TC V President, <a href="http://www2.isprs.org/commissions/comm5.html" target="_blank">ISPRS</a> </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Janak Raj Joshi, </strong> </li>
+                        <li class="list-inline-item"> Joint Secretary, <a href="http://molcpa.gov.np/">MOLCPA</a> </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Prakash Joshi</strong> </li>
+                        <li class="list-inline-item">Director General, <a href="http://dos.gov.np/">Survey Department
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Krishna Prasad Gyawali</strong> </li>
+                        <li class="list-inline-item">Director General,<a href="http://dolma.gov.np/">DOLMA </a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3">
+                  <div class="card-body">
+                     <h4 class="card-title">Member Secretary</h4>
+                     <ul class="list-inline">
+                        <li class="list-inline-item"> <strong> Mr. Ganesh Prasad Bhatta</strong> </li>
+                        <li class="list-inline-item"> Executive Director, <a href="https://www.lmtc.gov.np/">LMTC </a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+     ]]>
+    </string>
+
     <string name='naxa_url' translatable="false">https://naxa.com.np/home/</string>
 
     <string name="event_keynote_title">Keynote</string>

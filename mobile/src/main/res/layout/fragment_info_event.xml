@@ -145,6 +145,26 @@
                     app:layout_constraintStart_toStartOf="@+id/guideline_start"
                     app:layout_constraintTop_toBottomOf="@+id/wifi_password_label" />
 
+
+
+                <com.google.samples.apps.iosched.widget.CollapsibleCard
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/event_sitemap_header"
+                    android:id="@+id/hotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardDescription="@string/lmtc_hotel_info_description"
+                    app:cardTitle="@string/lmtc_hotel_info_title" />
+
+                <com.google.samples.apps.iosched.widget.CollapsibleCard
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/hotel"
+                    android:id="@+id/tour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardDescription="@string/lmtc_tour_description"
+                    app:cardTitle="@string/lmtc_tour_title" />
+
                 <TextView
                     android:id="@+id/event_types_header"
                     android:layout_width="wrap_content"
@@ -153,7 +173,7 @@
                     android:text="@string/event_types_header"
                     android:textAppearance="@style/TextAppearance.IOSched.Subhead"
                     app:layout_constraintStart_toStartOf="@+id/guideline_start"
-                    app:layout_constraintTop_toBottomOf="@+id/event_sitemap_header" />
+                    app:layout_constraintTop_toBottomOf="@+id/tour" />
 
                 <com.google.samples.apps.iosched.widget.EventView
                     android:id="@+id/event_sessions"

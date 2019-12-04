@@ -76,6 +76,27 @@
             app:cardDescription="@string/lmtc_will_there_be_internet_description"
             app:cardTitle="@string/lmtc_will_there_be_internet_title" />
 
+        <com.google.samples.apps.iosched.widget.CollapsibleCard
+            android:id="@+id/hotel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:cardDescription="@string/lmtc_hotel_info_description"
+            app:cardTitle="@string/lmtc_hotel_info_title" />
+
+        <com.google.samples.apps.iosched.widget.CollapsibleCard
+            android:id="@+id/tour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardDescription="@string/lmtc_tour_description"
+            app:cardTitle="@string/lmtc_tour_title" />
+
+        <com.google.samples.apps.iosched.widget.CollapsibleCard
+            android:id="@+id/contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardDescription="@string/lmtc_contact_description"
+            app:cardTitle="@string/lmtc_contact_title" />
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
