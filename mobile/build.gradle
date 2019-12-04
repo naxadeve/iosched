@@ -33,18 +33,21 @@ android {
 
         vectorDrawables.useSupportLibrary true
 
-        manifestPlaceholders = [crashlyticsEnabled: false]
+        manifestPlaceholders = [crashlyticsEnabled: true]
     }
 
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
-            manifestPlaceholders = [crashlyticsEnabled: false]
+            manifestPlaceholders = [crashlyticsEnabled: true]
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            manifestPlaceholders = [crashlyticsEnabled: false]
+            minifyEnabled true
+            shrinkResources true
+            manifestPlaceholders = [crashlyticsEnabled: true]
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         staging {
             initWith debug
