@@ -15,6 +15,30 @@
       },
       "oauth_client": [
         {
+          "client_id": "399069283945-9qfvq01kig8k5qru024tss59ji88t1cv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "np.com.naxa.conf.lmtc",
+            "certificate_hash": "3afa0fe3bb9e36ff18be5db9d9a740148689807a"
+          }
+        },
+        {
+          "client_id": "399069283945-62m6ns314htrl65lnoirlutolcmcr3tc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "np.com.naxa.conf.lmtc",
+            "certificate_hash": "e499e9081b4ddf63788f4dfb4e7018c54f93188b"
+          }
+        },
+        {
+          "client_id": "399069283945-3jln9ihl67otkpmo9l9866h2d2ovmhlo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "np.com.naxa.conf.lmtc",
+            "certificate_hash": "8cd296e907ad79e6b7ad1137327aedb68531d2ee"
+          }
+        },
+        {
           "client_id": "399069283945-hdum6cvpqi19u77aagt3l6flcc3v59ld.apps.googleusercontent.com",
           "client_type": 3
         }

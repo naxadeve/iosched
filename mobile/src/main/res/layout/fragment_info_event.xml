@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2018 Google LLC
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,10 +65,10 @@
                     android:text="@string/wifi_header"
                     android:textAppearance="@style/TextAppearance.IOSched.Subhead"
                     android:visibility="visible"
+                    app:goneUnless="@{viewModel.showWifi}"
                     app:layout_constraintEnd_toEndOf="@id/guideline_end"
                     app:layout_constraintStart_toStartOf="@id/guideline_start"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:goneUnless="@{viewModel.showWifi}" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/wifi_network_label"
@@ -79,9 +78,9 @@
                     android:text="@string/wifi_network_label"
                     android:textColor="?android:textColorPrimary"
                     android:visibility="visible"
+                    app:goneUnless="@{viewModel.showWifi}"
                     app:layout_constraintStart_toStartOf="@id/guideline_start"
-                    app:layout_constraintTop_toBottomOf="@+id/wifi_header"
-                    app:goneUnless="@{viewModel.showWifi}" />
+                    app:layout_constraintTop_toBottomOf="@+id/wifi_header" />
 
                 <TextView
                     android:id="@+id/wifi_password_label"
@@ -91,9 +90,9 @@
                     android:text="@string/wifi_password_label"
                     android:textColor="?android:textColorPrimary"
                     android:visibility="visible"
+                    app:goneUnless="@{viewModel.showWifi}"
                     app:layout_constraintStart_toStartOf="@id/guideline_start"
-                    app:layout_constraintTop_toBottomOf="@+id/wifi_network_label"
-                    app:goneUnless="@{viewModel.showWifi}" />
+                    app:layout_constraintTop_toBottomOf="@+id/wifi_network_label" />
 
                 <androidx.constraintlayout.widget.Barrier
                     android:id="@+id/wifi_label_barrier"
@@ -110,10 +109,10 @@
                     android:text="@{viewModel.wifiSsid}"
                     android:textColor="?android:textColorPrimary"
                     android:visibility="visible"
+                    app:goneUnless="@{viewModel.showWifi}"
                     app:layout_constraintBaseline_toBaselineOf="@+id/wifi_network_label"
                     app:layout_constraintEnd_toStartOf="@id/guideline_end"
                     app:layout_constraintStart_toEndOf="@+id/wifi_label_barrier"
-                    app:goneUnless="@{viewModel.showWifi}"
                     tools:text="IO2018" />
 
                 <TextView
@@ -128,42 +127,41 @@
                     android:text="@{viewModel.wifiPassword.concat(` ` + @string/tap_to_join_network)}"
                     android:textColor="?attr/colorSecondary"
                     android:visibility="visible"
+                    app:goneUnless="@{viewModel.showWifi}"
                     app:layout_constraintBaseline_toBaselineOf="@id/wifi_password_label"
                     app:layout_constraintEnd_toStartOf="@id/guideline_end"
                     app:layout_constraintStart_toEndOf="@id/wifi_label_barrier"
-                    app:goneUnless="@{viewModel.showWifi}"
                     tools:text="whatislove" />
 
                 <TextView
-                    android:onClick="@{() -> viewModel.onSiteMapOpen()}"
                     android:id="@+id/event_sitemap_header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_large"
+                    android:onClick="@{() -> viewModel.onSiteMapOpen()}"
                     android:text="@string/event_site_map_header"
                     android:textAppearance="@style/TextAppearance.IOSched.Subhead"
                     app:layout_constraintStart_toStartOf="@+id/guideline_start"
                     app:layout_constraintTop_toBottomOf="@+id/wifi_password_label" />
 
 
-
                 <com.google.samples.apps.iosched.widget.CollapsibleCard
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/event_sitemap_header"
                     android:id="@+id/hotel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     app:cardDescription="@string/lmtc_hotel_info_description"
-                    app:cardTitle="@string/lmtc_hotel_info_title" />
+                    app:cardTitle="@string/lmtc_hotel_info_title"
+                    app:layout_constraintTop_toBottomOf="@+id/event_sitemap_header" />
 
                 <com.google.samples.apps.iosched.widget.CollapsibleCard
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/hotel"
                     android:id="@+id/tour"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     app:cardDescription="@string/lmtc_tour_description"
-                    app:cardTitle="@string/lmtc_tour_title" />
+                    app:cardTitle="@string/lmtc_tour_title"
+                    app:layout_constraintTop_toBottomOf="@+id/hotel" />
 
                 <TextView
                     android:id="@+id/event_types_header"
@@ -172,55 +170,69 @@
                     android:layout_marginTop="@dimen/margin_large"
                     android:text="@string/event_types_header"
                     android:textAppearance="@style/TextAppearance.IOSched.Subhead"
+                    android:visibility="gone"
                     app:layout_constraintStart_toStartOf="@+id/guideline_start"
                     app:layout_constraintTop_toBottomOf="@+id/tour" />
+
+                <TextView
+                    android:id="@+id/review"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:text="@string/event_review_title"
+                    android:textAppearance="@style/TextAppearance.IOSched.Subhead"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/event_types_header" />
 
                 <com.google.samples.apps.iosched.widget.EventView
                     android:id="@+id/event_sessions"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_normal"
+                    app:eventDescription="@string/ltmc_feedback_form_description"
+                    app:eventTitle="@string/lmtc_feedback_form_title"
+                    app:eventTypeLogo="@drawable/event_header_meals"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/event_types_header"
-                    app:eventDescription="@string/event_keynote_description"
-                    app:eventTitle="@string/event_keynote_title"
-                    app:eventTypeLogo="@drawable/event_header_sessions" />
+                    app:layout_constraintTop_toBottomOf="@+id/review" />
 
 
                 <com.google.samples.apps.iosched.widget.EventView
                     android:id="@+id/event_codelabs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/event_sessions"
+                    android:visibility="gone"
                     app:eventDescription="@string/event_technical_session_description"
                     app:eventTitle="@string/event_technical_session_title"
-                    app:eventTypeLogo="@drawable/event_header_codelabs" />
+                    app:eventTypeLogo="@drawable/event_header_codelabs"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/event_sessions" />
 
                 <com.google.samples.apps.iosched.widget.EventView
                     android:id="@+id/event_officehours"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/event_codelabs"
+                    android:visibility="gone"
                     app:eventDescription="@string/event_bim_session_description"
                     app:eventTitle="@string/event_bim_session_title"
-                    app:eventTypeLogo="@drawable/event_header_office_hours" />
+                    app:eventTypeLogo="@drawable/event_header_office_hours"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/event_codelabs" />
 
 
                 <com.google.samples.apps.iosched.widget.EventView
                     android:id="@+id/event_meals"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/event_officehours"
+                    android:visibility="gone"
                     app:eventDescription="@string/event_meals_description"
                     app:eventTitle="@string/event_meals_title"
-                    app:eventTypeLogo="@drawable/event_header_meals" />
+                    app:eventTypeLogo="@drawable/event_header_meals"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/event_officehours" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

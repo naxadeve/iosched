@@ -338,8 +338,13 @@
     <string name="lmtc_meal_description">Free breakfast, tea and lunch will be provided to all attendees</string>
     <string name="lmtc_after_hours_description"> All registered attendees are invited to the welcome reception in the evening  </string>
     <string name="lmtc_how_to_get_there_title"> How to get to the venue? </string>
-    <string name="lmtc_how_to_get_there_description">There will be free bus services from Ratnapark to Workshop Venue
-Dhulikhel to Workshop Venue
+    <string name="lmtc_how_to_get_there_description">
+        There will be free bus services from Ratnapark to Workshop Venue Dhulikhel to Workshop Venue
+        \nIf you are coming from International Airport, you can get taxi to come to Workshop Venue (LMTC, 28 kilo, Dhulikhel, Kavre);
+        however the fare may range from Nepali Rupee 3000 to 4000.
+
+        \n\nThere are local transportation too; from Airport to Koteshor (the bus charges Nepali Rupee 20) and from Koteshor to 28 Kilo, Dhulikhel (the bus charges Nepali Rupee 55).
+        \n\nAlso, if you have provided the transportation details to the workshop team, transportation facilities can be made available from Workshop Team as well.
 </string>
     <string name="lmtc_will_there_be_internet_title"> Will there be internet access?</string>
     <string name="lmtc_will_there_be_internet_description"> Yes, free wifi will be available in the workshop areas</string>
@@ -1036,7 +1041,11 @@ Dhulikhel to Workshop Venue
 
     <string name="event_bim_session_title">Bim Session</string>
     <string name="event_bim_session_description">Coming Soon</string>
-    <string name="event_site_map_header">SITE MAP</string>
+    <string name="event_site_map_header">OPEN SITE MAP</string>
     <string name="close">CLOSE</string>
+    <string name="event_review_title">Event Review Form</string>
+    <string name="ltmc_feedback_form_description">Thank you for participating in the International Workshop Nepal 2019 happened on December 10–11, 2019 on Land Management Training Center, Dhulikhel, Nepal.\n\nPlease fill this quick survey and let us know your thoughts to improve our management, logistics and content in the future events (your answers will be anonymous).</string>
+    <string name="lmtc_feedback_form_title">International Workshop\nNepal 2019 feedback form</string>
+    <string name="lmtc_feed_back_form_url" translatable="false">https://docs.google.com/forms/d/e/1FAIpQLSeUUNFOQhELpkmsDTtsUTZnTWBDSagcewS4sRpYz--gcG66qQ/viewform</string>
 
 </resources>

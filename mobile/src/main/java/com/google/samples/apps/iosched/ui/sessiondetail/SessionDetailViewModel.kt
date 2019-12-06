@@ -67,16 +67,16 @@ private const val SIXTY_SECONDS = 60_000L
  * Loads [Session] data and exposes it to the session detail view.
  */
 class SessionDetailViewModel @Inject constructor(
-    private val signInViewModelDelegate: SignInViewModelDelegate,
-    private val loadUserSessionUseCase: LoadUserSessionUseCase,
-    private val loadRelatedSessionUseCase: LoadUserSessionsUseCase,
-    private val starEventUseCase: StarEventAndNotifyUseCase,
-    observeConferenceDataUseCase: ObserveConferenceDataUseCase,
-    private val getTimeZoneUseCase: GetTimeZoneUseCase,
-    timeProvider: TimeProvider,
-    private val analyticsHelper: AnalyticsHelper
+        private val signInViewModelDelegate: SignInViewModelDelegate,
+        private val loadUserSessionUseCase: LoadUserSessionUseCase,
+        private val loadRelatedSessionUseCase: LoadUserSessionsUseCase,
+        private val starEventUseCase: StarEventAndNotifyUseCase,
+        observeConferenceDataUseCase: ObserveConferenceDataUseCase,
+        private val getTimeZoneUseCase: GetTimeZoneUseCase,
+        timeProvider: TimeProvider,
+        private val analyticsHelper: AnalyticsHelper
 ) : ViewModel(), SessionDetailEventListener, EventActions,
-    SignInViewModelDelegate by signInViewModelDelegate {
+        SignInViewModelDelegate by signInViewModelDelegate {
 
     // Keeps track of the coroutine that listens for a user session
     private var loadUserSessionJob: Job? = null
@@ -176,8 +176,7 @@ class SessionDetailViewModel @Inject constructor(
 
         showRateButton = sessionTimeRelativeState.map { currentState ->
             // TODO: uncomment when rate session logic is hooked up
-            // currentState == TimeUtils.SessionRelativeTimeState.AFTER
-            false
+            currentState == TimeUtils.SessionRelativeTimeState.DURING
         }
 
         hasSpeakers = session.map { currentSession ->
@@ -246,11 +245,11 @@ class SessionDetailViewModel @Inject constructor(
         viewModelScope.launch {
             getUserId()?.let {
                 val result = starEventUseCase(
-                    StarEventParameter(
-                        it, userSession.copy(
-                            userEvent = userSession.userEvent.copy(isStarred = newIsStarredState)
+                        StarEventParameter(
+                                it, userSession.copy(
+                                userEvent = userSession.userEvent.copy(isStarred = newIsStarredState)
                         )
-                    )
+                        )
                 )
 
                 // Show an error message if a star request fails

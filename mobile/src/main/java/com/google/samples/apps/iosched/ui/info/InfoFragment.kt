@@ -16,6 +16,9 @@
 
 package com.google.samples.apps.iosched.ui.info
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,18 +31,21 @@ import com.google.samples.apps.iosched.databinding.FragmentInfoBinding
 import com.google.samples.apps.iosched.shared.analytics.AnalyticsHelper
 import com.google.samples.apps.iosched.ui.MainNavigationFragment
 import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.fragment_info_event.*
+import kotlinx.android.synthetic.main.fragment_info_event.view.*
 import javax.inject.Inject
 
 class InfoFragment : DaggerFragment(), MainNavigationFragment {
 
-    @Inject lateinit var analyticsHelper: AnalyticsHelper
+    @Inject
+    lateinit var analyticsHelper: AnalyticsHelper
 
     private lateinit var binding: FragmentInfoBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         binding = FragmentInfoBinding.inflate(inflater, container, false).apply {
             lifecycleOwner = viewLifecycleOwner
@@ -63,6 +69,8 @@ class InfoFragment : DaggerFragment(), MainNavigationFragment {
                     trackInfoScreenView(position)
                 }
             })
+
+
         }
     }
 
@@ -75,7 +83,7 @@ class InfoFragment : DaggerFragment(), MainNavigationFragment {
      * Adapter that builds a page for each info screen.
      */
     inner class InfoAdapter(
-        fm: FragmentManager
+            fm: FragmentManager
     ) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
         override fun getCount() = INFO_PAGES.size
@@ -91,16 +99,16 @@ class InfoFragment : DaggerFragment(), MainNavigationFragment {
 
         private val TAG: String = InfoFragment::class.java.simpleName
         private val INFO_TITLES = arrayOf(
-            R.string.event_title,
-            R.string.travel_title,
-            R.string.about_title,
-            R.string.settings_title
+                R.string.event_title,
+                R.string.travel_title,
+                R.string.about_title,
+                R.string.settings_title
         )
         private val INFO_PAGES = arrayOf(
-            { EventFragment() },
-            { TravelFragment() },
-            { AboutFragment() },
-            { SettingsFragment() }
+                { EventFragment() },
+                { TravelFragment() },
+                { AboutFragment() },
+                { SettingsFragment() }
         )
     }
 }

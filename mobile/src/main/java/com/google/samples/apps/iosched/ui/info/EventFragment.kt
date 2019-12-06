@@ -16,6 +16,7 @@
 
 package com.google.samples.apps.iosched.ui.info
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -36,6 +37,7 @@ import com.google.samples.apps.iosched.ui.messages.SnackbarMessageManager
 import com.google.samples.apps.iosched.ui.setUpSnackbar
 import com.google.samples.apps.iosched.widget.FadingSnackbar
 import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.fragment_info_event.view.*
 import javax.inject.Inject
 
 class EventFragment : DaggerFragment() {
@@ -60,7 +62,17 @@ class EventFragment : DaggerFragment() {
         val snackbarLayout = requireActivity().findViewById<FadingSnackbar>(R.id.snackbar)
         setUpSnackbar(eventInfoViewModel.snackBarMessage, snackbarLayout, snackbarMessageManager)
 
+        binding.root.event_sessions.setOnClickListener {
+            openNewTabWindow(getString(R.string.lmtc_feed_back_form_url), requireContext());
+        }
         return binding.root
+    }
+
+
+    fun openNewTabWindow(urls: String, context: Context) {
+        val uris = Uri.parse(urls)
+        val intents = Intent(Intent.ACTION_VIEW, uris)
+        context.startActivity(intents)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
