@@ -49,9 +49,9 @@ import timber.log.Timber
  * A [RecyclerView.ItemDecoration] which draws sticky headers for a given list of sessions.
  */
 class ScheduleTimeHeadersDecoration(
-    context: Context,
-    sessions: List<Session>,
-    zoneId: ZoneId
+        context: Context,
+        sessions: List<Session>,
+        zoneId: ZoneId
 ) : ItemDecoration() {
 
     private val paint: TextPaint
@@ -65,16 +65,16 @@ class ScheduleTimeHeadersDecoration(
 
     init {
         val attrs = context.obtainStyledAttributes(
-            R.style.Widget_IOSched_TimeHeaders,
-            R.styleable.TimeHeader
+                R.style.Widget_IOSched_TimeHeaders,
+                R.styleable.TimeHeader
         )
         paint = TextPaint(ANTI_ALIAS_FLAG).apply {
             color = attrs.getColorOrThrow(R.styleable.TimeHeader_android_textColor)
             textSize = attrs.getDimensionOrThrow(R.styleable.TimeHeader_hourTextSize)
             try {
                 typeface = ResourcesCompat.getFont(
-                    context,
-                    attrs.getResourceIdOrThrow(R.styleable.TimeHeader_android_fontFamily)
+                        context,
+                        attrs.getResourceIdOrThrow(R.styleable.TimeHeader_android_fontFamily)
                 )
             } catch (_: Exception) {
                 // ignore
@@ -84,16 +84,16 @@ class ScheduleTimeHeadersDecoration(
         paddingTop = attrs.getDimensionPixelSizeOrThrow(R.styleable.TimeHeader_android_paddingTop)
         hourMinTextSize = attrs.getDimensionPixelSizeOrThrow(R.styleable.TimeHeader_hourMinTextSize)
         meridiemTextSize =
-            attrs.getDimensionPixelSizeOrThrow(R.styleable.TimeHeader_meridiemTextSize)
+                attrs.getDimensionPixelSizeOrThrow(R.styleable.TimeHeader_meridiemTextSize)
         attrs.recycle()
     }
 
     // Get the sessions index:start time and create header layouts for each
     // TODO: let user pick between local or conference time zone (b/77606102). Show local for now.
     private val timeSlots: Map<Int, StaticLayout> =
-        indexSessionHeaders(sessions, zoneId).map {
-            it.first to createHeader(it.second)
-        }.toMap()
+            indexSessionHeaders(sessions, zoneId).map {
+                it.first to createHeader(it.second)
+            }.toMap()
 
     /**
      * Loop over each child and draw any corresponding headers i.e. items who's position is a key in
@@ -114,7 +114,7 @@ class ScheduleTimeHeadersDecoration(
                 // This should not be null, but observed null at times.
                 // Guard against it to avoid crash and log the state.
                 Timber.w(
-                    """View is null. Index: $i, childCount: ${parent.childCount},
+                        """View is null. Index: $i, childCount: ${parent.childCount},
                         |RecyclerView.State: $state""".trimMargin()
                 )
                 continue
@@ -125,8 +125,8 @@ class ScheduleTimeHeadersDecoration(
                 timeSlots[position]?.let { layout ->
                     paint.alpha = (view.alpha * 255).toInt()
                     val top = (viewTop + paddingTop)
-                        .coerceAtLeast(paddingTop)
-                        .coerceAtMost(prevHeaderTop - layout.height)
+                            .coerceAtLeast(paddingTop)
+                            .coerceAtMost(prevHeaderTop - layout.height)
                     c.withTranslation(y = top.toFloat()) {
                         layout.draw(c)
                     }
@@ -159,6 +159,7 @@ class ScheduleTimeHeadersDecoration(
      * Create a header layout for the given [startTime].
      */
     private fun createHeader(startTime: ZonedDateTime): StaticLayout {
+
         val text = if (startTime.minute == 0) {
             SpannableStringBuilder(hourFormatter.format(startTime))
         } else {

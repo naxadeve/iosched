@@ -59,7 +59,7 @@ class EventInfoViewModel @Inject constructor(
     val openSiteMapEvent: LiveData<Event<String>> get() = _openSiteMapEvent
 
     // TODO: Enable when final
-    private val _showWifi = MutableLiveData<Boolean>().apply { value = true }
+    private val _showWifi = MutableLiveData<Boolean>().apply { value = false }
     val showWifi: LiveData<Boolean>
         get() = _showWifi
 

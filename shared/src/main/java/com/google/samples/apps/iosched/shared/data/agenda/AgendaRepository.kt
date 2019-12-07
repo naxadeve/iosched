@@ -19,6 +19,7 @@ package com.google.samples.apps.iosched.shared.data.agenda
 import com.google.samples.apps.iosched.model.Block
 import com.google.samples.apps.iosched.shared.data.config.AppConfigDataSource
 import com.google.samples.apps.iosched.shared.domain.agenda.AgendaJSONParser
+import com.google.samples.apps.iosched.shared.domain.agenda.AgendaParser
 
 /**
  * Single point of access to agenda data for the presentation layer.
@@ -41,6 +42,6 @@ class DefaultAgendaRepository(
         if (true) {
             appConfigDataSource.syncStrings()
         }
-        return AgendaJSONParser.getAgenda()
+        return AgendaParser.getAgenda(appConfigDataSource)
     }
 }

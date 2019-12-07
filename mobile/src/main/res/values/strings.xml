@@ -15,9 +15,9 @@
   -->
 
 <resources>
-    <string name="title_schedule" translation_description="The title for the schedule screen where user can see their schedule for the Android Dev Summit.">Schedule</string>
+    <string name="title_schedule" translation_description="The title for the schedule screen where user can see their schedule for the Android Dev Summit.">Session</string>
     <string name="title_info" translation_description="The title for the info screen where user can see various information, such as FAQ and travel info.">Info</string>
-    <string name="title_agenda" translation_description="The title for the agenda screen where user can see all the sessions they plan to attend.">Agenda</string>
+    <string name="title_agenda" translation_description="The title for the agenda screen where user can see all the sessions they plan to attend.">Schedule</string>
 
     <!-- Schedule -->
     <string name="filters" translation_description="The label for the button to filter sessions by their topics, room, and so on.">Filters</string>
@@ -1041,7 +1041,7 @@
 
     <string name="event_bim_session_title">Bim Session</string>
     <string name="event_bim_session_description">Coming Soon</string>
-    <string name="event_site_map_header">OPEN SITE MAP</string>
+    <string name="event_site_map_header">OPEN IN MAP</string>
     <string name="close">CLOSE</string>
     <string name="event_review_title">Event Review Form</string>
     <string name="ltmc_feedback_form_description">Thank you for participating in the International Workshop Nepal 2019 happened on December 10–11, 2019 on Land Management Training Center, Dhulikhel, Nepal.\n\nPlease fill this quick survey and let us know your thoughts to improve our management, logistics and content in the future events (your answers will be anonymous).</string>

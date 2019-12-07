@@ -192,6 +192,7 @@ open class RemoteAppConfigDataSource @Inject constructor(
         const val LABEL_LUNCH = "label_lunch"
         const val LABEL_TEA_BREAK = "label_tea_break"
         const val LABEL_PARTY = "label_party"
+        const val AGENDA = "agenda_data"
 
         const val AUTOSCROLL_FEATURE_ENABLED = "autoscroll_feature_enabled"
 

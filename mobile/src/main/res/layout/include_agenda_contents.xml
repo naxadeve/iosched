@@ -43,29 +43,29 @@
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:agendaColor="@{agenda.color}"
+            app:agendaStrokeColor="@{agenda.strokeColor}"
+            app:agendaStrokeWidth="@{@dimen/agenda_item_stroke}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/keyline"
-            app:layout_constraintTop_toTopOf="parent"
-            app:agendaColor="@{agenda.color}"
-            app:agendaStrokeColor="@{agenda.strokeColor}"
-            app:agendaStrokeWidth="@{@dimen/agenda_item_stroke}" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/icon"
             android:layout_width="@dimen/agenda_icon_width"
             android:layout_height="wrap_content"
+            app:agendaIcon="@{agenda.type}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/keyline"
-            app:layout_constraintTop_toTopOf="parent"
-            app:agendaIcon="@{agenda.type}" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/agenda_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginTop="@dimen/agenda_block_padding_vert"
+            android:layout_marginEnd="@dimen/margin_normal"
             android:text="@{agenda.title}"
             android:textAppearance="@style/TextAppearance.IOSched.AgendaTitle"
             app:layout_constraintEnd_toEndOf="parent"
@@ -78,10 +78,10 @@
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/agenda_block_padding_vert"
             android:textAppearance="@style/TextAppearance.IOSched.ListSecondary"
+            app:endTime="@{agenda.endTime}"
             app:layout_constraintEnd_toEndOf="@id/agenda_title"
             app:layout_constraintStart_toStartOf="@id/agenda_title"
             app:layout_constraintTop_toBottomOf="@id/agenda_title"
-            app:endTime="@{agenda.endTime}"
             app:startTime="@{agenda.startTime}"
             app:timeZoneId="@{timeZoneId}" />
 

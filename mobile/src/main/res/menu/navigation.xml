@@ -20,13 +20,14 @@
 
     <item
         android:id="@+id/navigation_schedule"
-        android:icon="@drawable/asld_nav_schedule"
+        android:icon="@drawable/asld_nav_agenda"
         android:title="@string/title_schedule"
         app:contentDescription="@string/title_schedule" />
 
     <item
+        android:icon="@drawable/asld_nav_schedule"
         android:id="@+id/navigation_agenda"
-        android:icon="@drawable/asld_nav_agenda"
+
         android:title="@string/title_agenda"
         app:contentDescription="@string/title_agenda" />
 

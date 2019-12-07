@@ -14,85 +14,63 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.iosched.shared.domain.agenda;
+package com.google.samples.apps.iosched.shared.domain.agenda
 
-import com.google.samples.apps.iosched.model.Block;
-import com.google.samples.apps.iosched.shared.data.config.AppConfigDataSource;
-import com.google.samples.apps.iosched.shared.data.config.RemoteAppConfigDataSource;
+import com.google.samples.apps.iosched.model.Block
+import com.google.samples.apps.iosched.shared.data.agenda.*
+import com.google.samples.apps.iosched.shared.data.config.AppConfigDataSource
+import com.google.samples.apps.iosched.shared.data.config.RemoteAppConfigDataSource.Companion.AGENDA
+import org.json.JSONArray
+import org.json.JSONException
+import org.threeten.bp.ZonedDateTime
+import java.util.*
 
-import org.jetbrains.annotations.NotNull;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.threeten.bp.ZonedDateTime;
+/*
+* Copyright 2019 Google LLC
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     https://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_AFTER_HOURS;
-import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_HONOUR;
-import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_KEYNOTE;
-import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_MEAL;
-import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_REGISTRATION;
-import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_PHOTO;
-import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_SESSIONS;
-import static com.google.samples.apps.iosched.shared.data.agenda.AgendaBlocksKt.COLOR_SPEECH;
-import static com.google.samples.apps.iosched.shared.data.config.RemoteAppConfigDataSource.AGENDA;
-
-public class AgendaJSONParser {
-
-    private static HashMap<String, Integer> typeColorMAP = new HashMap<>();
-
-    static {
-
-        typeColorMAP.put("session", COLOR_SESSIONS);
-        typeColorMAP.put("meal", COLOR_MEAL);
-        typeColorMAP.put("speech", COLOR_SPEECH);
-        typeColorMAP.put("photo", COLOR_PHOTO);
-        typeColorMAP.put("badge", COLOR_REGISTRATION);
-        typeColorMAP.put("after_hours", COLOR_AFTER_HOURS);
-        typeColorMAP.put("keynote", COLOR_KEYNOTE);
-        typeColorMAP.put("honour", COLOR_HONOUR);
-
-
-    }
-
-
-    public static ArrayList<Block> getAgenda(@NotNull AppConfigDataSource appConfigDataSource) throws JSONException {
-
-        JSONArray jsonArray = new JSONArray();
-        ArrayList<Block> blocks = new ArrayList<>();
-        Block block;
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject agenda = jsonArray.getJSONObject(i);
-            String title = agenda.optString("title");
-            String type = agenda.optString("type");
-            boolean isDark = type.equalsIgnoreCase("keynote")  || type.contains("after_hours")
-                    || type.contains("speech") || type.contains("honour");
-
-
-            String start = agenda.optString("start");
-            String end = agenda.optString("end");
-
-
-            block = new Block(title, type, getOrDefault(typeColorMAP, type),
-                    getOrDefault(typeColorMAP, type), isDark, ZonedDateTime.parse(start),
-                    ZonedDateTime.parse(end));
-            blocks.add(block);
+object AgendaParser {
+    private val typeColorMAP = HashMap<String, Int?>()
+    @Throws(JSONException::class)
+    fun getAgenda(appConfigDataSource: AppConfigDataSource): ArrayList<Block> {
+        val jsonArray = JSONArray(json)
+        val blocks = ArrayList<Block>()
+        var block: Block
+        for (i in 0 until jsonArray.length()) {
+            val agenda = jsonArray.getJSONObject(i)
+            val title = agenda.optString("title")
+            val type = agenda.optString("type")
+            val isDark = (type.equals("keynote", ignoreCase = true) || type.contains("after_hours")
+                    || type.contains("speech") || type.contains("honour"))
+            val start = agenda.optString("start")
+            val end = agenda.optString("end")
+            block = Block(title, type, getOrDefault(typeColorMAP, type)!!,
+                    getOrDefault(typeColorMAP, type)!!, isDark, ZonedDateTime.parse(start),
+                    ZonedDateTime.parse(end))
+            blocks.add(block)
         }
-
-        return blocks;
+        return blocks
     }
 
-    private static Integer getOrDefault(HashMap<String, Integer> map, String key) {
-        if (map.containsKey(key)) {
-            return map.get(key);
-        }
-        return COLOR_SESSIONS;
+    private fun getOrDefault(map: HashMap<String, Int?>, key: String): Int? {
+        return if (map.containsKey(key)) {
+            map[key]
+        } else COLOR_SESSIONS
     }
 
-
-    private final static String json = "[\n" +
+    private const val json = "[\n" +
             "    {\n" +
             "        \"start\": \"2019-12-10T08:00:00+05:45\",\n" +
             "        \"end\": \"2019-12-10T09:00:00+05:45\",\n" +
@@ -162,7 +140,7 @@ public class AgendaJSONParser {
             "    {\n" +
             "        \"start\": \"2019-12-10T10:10:00+05:45\",\n" +
             "        \"end\": \"2019-12-10T10:20:00+05:45\",\n" +
-            "        \"title\": \"Closing Remarks: Chair\",\n" +
+            "        \"title\": \"Closing Remarks\",\n" +
             "        \"type\": \"speech\"\n" +
             "    },\n" +
             "    {\n" +
@@ -244,88 +222,99 @@ public class AgendaJSONParser {
             "        \"type\": \"badge\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T09:00:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T09:45:00+05:45\",\n" +
-            "        \"title\": \"Day Ii Opening Session\",\n" +
+            "        \"start\": \"2019-12-11T09:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T09:45:00+05:45\",\n" +
+            "        \"title\": \"Day Two Opening Session\",\n" +
             "        \"type\": \"speech\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T09:00:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T09:10:00+05:45\",\n" +
-            "        \"title\": \"Summary Of Day I\",\n" +
+            "        \"start\": \"2019-12-11T09:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T09:10:00+05:45\",\n" +
+            "        \"title\": \"Summary Of Day One\",\n" +
             "        \"type\": \"speech\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T09:10:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T09:30:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T09:10:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T09:30:00+05:45\",\n" +
             "        \"title\": \"The Future Of Authoritative Geospatial Data In The Big Data World - Trends, Opportunities And Challenges\",\n" +
             "        \"type\": \"speech\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T09:30:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T09:45:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T09:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T09:45:00+05:45\",\n" +
             "        \"title\": \"Presentation - Trimble\",\n" +
             "        \"type\": \"speech\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T09:45:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T10:00:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T09:45:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T10:00:00+05:45\",\n" +
             "        \"title\": \"Short Break\",\n" +
             "        \"type\": \"after_hours\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T10:00:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T11:30:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T10:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T11:30:00+05:45\",\n" +
             "        \"title\": \"Techincal Session 5 (Advanced Geospatial Technologies- Ecology And Geography)\",\n" +
             "        \"type\": \"session\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T10:00:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T11:30:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T10:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T11:30:00+05:45\",\n" +
             "        \"title\": \"Techincal Session 6 (Land Management)\",\n" +
             "        \"type\": \"session\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T11:30:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T12:00:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T11:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T12:00:00+05:45\",\n" +
             "        \"title\": \"Lunch\",\n" +
             "        \"type\": \"meal\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T12:00:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T13:30:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T12:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T13:30:00+05:45\",\n" +
             "        \"title\": \"Techincal Session 7 (Remote Sensing And Space Education: Rs For Natural Disaster)\",\n" +
             "        \"type\": \"session\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T12:00:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T13:30:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T12:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T13:30:00+05:45\",\n" +
             "        \"title\": \"Techincal Session 8 (Exploring International Collaboration)\",\n" +
             "        \"type\": \"session\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T13:30:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T14:30:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T13:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T14:30:00+05:45\",\n" +
             "        \"title\": \"Lunch\",\n" +
-            "        \"type\": \"Lunch\"\n" +
+            "        \"type\": \"meal\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T14:30:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T15:00:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T14:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T15:00:00+05:45\",\n" +
             "        \"title\": \"Professional Networking (Informal)\",\n" +
             "        \"type\": \"badge\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T15:00:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T16:30:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T15:00:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T16:30:00+05:45\",\n" +
             "        \"title\": \"Closing Ceremony\",\n" +
             "        \"type\": \"badge\"\n" +
             "    },\n" +
             "    {\n" +
-            "        \"start\": \"2019-12-10T16:30:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T17:00:00+05:45\",\n" +
+            "        \"start\": \"2019-12-11T16:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-11T17:00:00+05:45\",\n" +
             "        \"title\": \"Hi-Tea\",\n" +
             "        \"type\": \"after_hours\"\n" +
             "    }\n" +
-            "]";
+            "]"
+
+    init {
+        typeColorMAP["session"] = COLOR_SESSIONS
+        typeColorMAP["meal"] = COLOR_MEAL
+        typeColorMAP["speech"] = COLOR_SPEECH
+        typeColorMAP["photo"] = COLOR_PHOTO
+        typeColorMAP["badge"] = COLOR_REGISTRATION
+        typeColorMAP["after_hours"] = COLOR_AFTER_HOURS
+        typeColorMAP["keynote"] = COLOR_KEYNOTE
+        typeColorMAP["honour"] = COLOR_HONOUR
+    }
 }

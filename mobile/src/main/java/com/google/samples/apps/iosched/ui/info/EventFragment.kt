@@ -32,13 +32,13 @@ import com.google.samples.apps.iosched.R
 import com.google.samples.apps.iosched.databinding.FragmentInfoEventBinding
 import com.google.samples.apps.iosched.shared.util.TimeUtils
 import com.google.samples.apps.iosched.shared.util.viewModelProvider
-import com.google.samples.apps.iosched.ui.MapActivity
 import com.google.samples.apps.iosched.ui.messages.SnackbarMessageManager
 import com.google.samples.apps.iosched.ui.setUpSnackbar
 import com.google.samples.apps.iosched.widget.FadingSnackbar
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_info_event.view.*
 import javax.inject.Inject
+
 
 class EventFragment : DaggerFragment() {
     @Inject
@@ -83,10 +83,17 @@ class EventFragment : DaggerFragment() {
         })
 
         eventInfoViewModel.openSiteMapEvent.observe(this, Observer {
-            val intent = Intent(requireActivity(), MapActivity::class.java)
-            val url = it?.getContentIfNotHandled() ?: return@Observer
-            startActivity(intent);
 
+            val lat = "27.6194012"
+            val lon = "85.5393975"
+            val label = "Land Management Training Center"
+            val urlAddress = "http://maps.google.com/maps?q=$lat,$lon($label)&iwloc=A&hl=es"
+            val mapIntent = Intent(Intent.ACTION_VIEW, Uri.parse(urlAddress))
+            if (mapIntent.resolveActivity(requireActivity().packageManager) != null) {
+                //            val intent = Intent(requireActivity(), MapActivity::class.java)
+                val url = it?.getContentIfNotHandled() ?: return@Observer
+                startActivity(mapIntent);
+            }
 
 
         })
