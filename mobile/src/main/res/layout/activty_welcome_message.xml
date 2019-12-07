@@ -58,7 +58,7 @@
                 android:padding="@dimen/onboarding_animation_padding"
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo_np_gov"
-                app:layout_constraintBottom_toTopOf="@id/welcome"
+                app:layout_constraintBottom_toTopOf="@id/logo"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
                 app:layout_constraintTop_toTopOf="parent"
@@ -69,25 +69,13 @@
                 style="@style/Widget.IOSched.OnboardingDeck"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/lmtc_welcome_message_description"
+
                 app:layout_constraintBottom_toTopOf="@+id/get_started"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/welcome" />
-
-            <TextView
-                android:id="@+id/welcome"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/lmtc_welcome_message_title"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.IOSched.H1"
-                app:layout_constraintBottom_toTopOf="@id/date_location"
-                app:layout_constraintEnd_toEndOf="@id/guideline_end"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@id/logo" />
+
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline_start"

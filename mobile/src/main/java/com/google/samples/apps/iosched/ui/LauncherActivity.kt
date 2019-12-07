@@ -41,7 +41,7 @@ class LauncherActivity : DaggerAppCompatActivity() {
         val viewModel: LaunchViewModel = viewModelProvider(viewModelFactory)
         viewModel.launchDestination.observe(this, EventObserver { destination ->
             when (destination) {
-                MAIN_ACTIVITY -> startActivity(Intent(this, MainActivity::class.java))
+                MAIN_ACTIVITY -> startActivity(Intent(this, OnboardingActivity::class.java))
                 ONBOARDING -> startActivity(Intent(this, OnboardingActivity::class.java))
             }.checkAllMatched
             finish()

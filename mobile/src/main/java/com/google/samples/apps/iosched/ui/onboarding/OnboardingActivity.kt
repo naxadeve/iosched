@@ -20,6 +20,7 @@ import android.R.interpolator
 import android.content.Intent
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.core.view.doOnNextLayout
@@ -32,11 +33,13 @@ import com.google.samples.apps.iosched.shared.result.EventObserver
 import com.google.samples.apps.iosched.shared.util.viewModelProvider
 import com.google.samples.apps.iosched.ui.MainActivity
 import dagger.android.support.DaggerAppCompatActivity
+import kotlinx.android.synthetic.main.activity_onboarding.*
 import javax.inject.Inject
 
 class OnboardingActivity : DaggerAppCompatActivity() {
 
-    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +47,7 @@ class OnboardingActivity : DaggerAppCompatActivity() {
         val onboardingViewModel: OnboardingViewModel = viewModelProvider(viewModelFactory)
 
         val binding = DataBindingUtil.setContentView<ActivityOnboardingBinding>(
-            this, R.layout.activity_onboarding
+                this, R.layout.activity_onboarding
         ).apply {
             viewModel = onboardingViewModel
             setLifecycleOwner(this@OnboardingActivity)
@@ -60,7 +63,13 @@ class OnboardingActivity : DaggerAppCompatActivity() {
         setImmersiveMode()
 
         setupTransition(binding)
+
+        welcome_message.setText(Html.fromHtml(getString(R.string.lmtc_welcome_message_description)));
+
+
+
     }
+
 
     private fun setImmersiveMode() {
         // immersive mode so images can draw behind the status bar
@@ -75,23 +84,23 @@ class OnboardingActivity : DaggerAppCompatActivity() {
         // Transition the logo animation (roughly) from the preview window background.
         binding.logo.apply {
             val interpolator =
-                AnimationUtils.loadInterpolator(context, interpolator.linear_out_slow_in)
+                    AnimationUtils.loadInterpolator(context, interpolator.linear_out_slow_in)
             alpha = 0.4f
             scaleX = 0.8f
             scaleY = 0.8f
             doOnNextLayout {
                 translationY = height / 3f
                 animate()
-                    .alpha(1f)
-                    .translationY(0f)
-                    .scaleX(1f)
-                    .scaleY(1f)
-                    .setInterpolator(interpolator)
-                    .withEndAction {
-//                        postDelayed(1000) {
+                        .alpha(1f)
+                        .translationY(0f)
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .setInterpolator(interpolator)
+                        .withEndAction {
+                            //                        postDelayed(1000) {
 //                            (binding.logo.drawable as AnimatedVectorDrawable).start()
 //                        }
-                    }
+                        }
             }
         }
     }
