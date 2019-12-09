@@ -15,7 +15,7 @@
   -->
 
 <resources>
-    <string name="title_schedule" translation_description="The title for the schedule screen where user can see their schedule for the Android Dev Summit.">Session</string>
+    <string name="title_schedule" translation_description="The title for the schedule screen where user can see their schedule for the Android Dev Summit.">Presentations</string>
     <string name="title_info" translation_description="The title for the info screen where user can see various information, such as FAQ and travel info.">Info</string>
     <string name="title_agenda" translation_description="The title for the agenda screen where user can see all the sessions they plan to attend.">Schedule</string>
 
@@ -349,9 +349,26 @@
     <string name="lmtc_will_there_be_internet_title"> Will there be internet access?</string>
     <string name="lmtc_will_there_be_internet_description"> Yes, free wifi will be available in the workshop areas</string>
     <string name="lmtc_welcome_message_description"><![CDATA[
-    Dear Colleagues and Geospatial enthusiasts,<p>On behalf of organizing committee, I take great pride in welcoming all of you to attend this two-day International Event on December 10- 11, 2019 organized by <a href="http://lmtc.gov.np/" target="_blank">Land Management Training Center </a> in collaboration with International Society for Remote Sensing and Photogrammetry (<a href="http://www2.isprs.org/commissions/comm5/wg7.html" target="_blank">TC V / WG 7 </a> and <a href="http://www2.isprs.org/commissions/comm4/wg6.html" target="_blank">TC IV / WG 6</a>), <a href="https://www.facebook.com/nepalrsps/" target="_blank">Nepal Remote Sensing and Photogrammetric Society </a>and <a href="http://charteredsurveyors.org.np/contact-us/" target="_blank">Nepal Institution of Chartered Surveyors</a> in Dhulikhel, a naturally majestic city of Nepal rich in ancient traditions and culture.</p><p>Geospatial domain has the characteristics of rapid development and adoption of newer technologies. This calls for a challenging task of harnessing recent scientific advances across multiple fields of education and research; then accelerate and guide evolution of geospatial technology. To ensure this, this workshop incorporates a wide spectrum of themes and, will provide a perfect global networking platform as it brings together renowned professionals from all over the world. The primary goal of this workshop is to cater exchange of recent research achievements and break-through ideas on cutting edge geospatial technologies and latest trends in geospatial education amongst multi-disciplinary group of attendees. This international workshop also aims to flourish collaborative relationship among national/international institutions, academicians and professionals for mutual benefit through knowledge sharing and technology transfer. </p><p>I believe especially our international participants will enjoy the scenic beauty of naturally enriched mountains during your stay in Nepal. I sincerely invite you to join us to make this workshop a fruitful and memorable event.</p><p>I am looking forward to meeting you all soon!</p><p><strong>Warmest regards,</strong><br> Ganesh Prasad Bhatta<br> (Executive Director, LMTC)<br> Chair, Organizing Committee</p>
+<font color="red"><b><u>Message from Chair, Organizing Committee</u></b></font>
 
-    ]]>
+<br>
+<br> Dear Distinguished Guests and Participants,
+<p>
+    On behalf of the Organizing Committee, I take great pride in welcoming all of you at the “International Workshop on Capacity Building and Education Outreach in Advanced Geospatial Technologies and Land Management” from December 10-11, 2019 organized by Land Management Training Center (LMTC) of the Government of Nepal.</p>
+
+<p>
+    It is so nice to have International Society for Remote Sensing and Photogrammetry (<a href="http://www2.isprs.org/commissions/comm5/wg7.html">TC V / WG 7</a> and <a href="http://www2.isprs.org/commissions/comm4/wg6.html">TC IV / WG 6</a>), <a href="https://www.facebook.com/nepalrsps/">Nepal Remote Sensing and Photogrammetric Society</a> (NRSPS), and <a href="charteredsurveyors.org.np/contact-us/">Nepal Institution of Chartered Surveyors</a> (NICS) with LMTC on board as the Co-organizers
+    <p>
+        With the given title and themes, this event aims to flourish collaborative relationship among national/international institutions, academicians and professionals for mutual benefit through knowledge sharing and technology transfer. The primary goal of this event is to provide forum for exchanging recent research achievements and break-through ideas on cutting edge geospatial technologies and latest trends in geospatial education amongst multi-disciplinary group of attendees.
+    </p>
+
+    <p>
+        I believe the international participants will enjoy the scenic beauty of Dhulikhel, a naturally majestic city of Nepal rich in ancient traditions and culture, and naturally enriched mountains during your stay in Nepal. We wish you a pleasant and fruitful stay in Nepal.
+    </p>
+
+    <b>Warmest regards,</b><br> Ganesh Prasad Bhatta<br> (Executive Director, LMTC)<br> Chair, Organizing Committee
+
+       ]]>
     </string>
     <string name="lmtc_hotel_info_title">Will there be accommodation? </string>
     <string name="lmtc_hotel_info_description">
@@ -927,7 +944,7 @@
          <h4 class="card-title">Member</h4>
          <ul class="list-inline">
             <li class="list-inline-item"><strong>Er. Sanjeevan Shrestha,</strong></li>
-            <li class="list-inline-item">Kathmandu University</li>
+            <li class="list-inline-item">LMTC</li>
          </ul>
       </div>
    </div>
@@ -1044,7 +1061,14 @@
     <string name="event_site_map_header">OPEN IN MAP</string>
     <string name="close">CLOSE</string>
     <string name="event_review_title">Event Review Form</string>
-    <string name="ltmc_feedback_form_description">Thank you for participating in the International Workshop Nepal 2019 happened on December 10–11, 2019 on Land Management Training Center, Dhulikhel, Nepal.\n\nPlease fill this quick survey and let us know your thoughts to improve our management, logistics and content in the future events (your answers will be anonymous).</string>
+    <string name="ltmc_feedback_form_description">
+        <![CDATA[
+            <p>
+            Thank you for participating in the <b> "International Workshop Nepal 2019 happened on December 10–11, 2019 on Land Management Training Center, Dhulikhel, Nepal.</p>
+            </b>\n\n <p><u>Please fill this quick survey and let us know your thoughts to improve our management, logistics and content in the future events (your answers will be anonymous).</u></p>
+
+]]>
+    </string>
     <string name="lmtc_feedback_form_title">International Workshop\nNepal 2019 feedback form</string>
     <string name="lmtc_feed_back_form_url" translatable="false">https://docs.google.com/forms/d/e/1FAIpQLSeUUNFOQhELpkmsDTtsUTZnTWBDSagcewS4sRpYz--gcG66qQ/viewform</string>
 

@@ -48,6 +48,7 @@ fun agendaIcon(imageView: ImageView, type: String) {
         "codelab" -> R.drawable.ic_agenda_codelab
         "concert" -> R.drawable.ic_agenda_concert
         "keynote" -> R.drawable.ic_agenda_keynote
+        "tea" -> R.drawable.ic_emoji_food_beverage_24px
         "meal" -> R.drawable.ic_agenda_meal
         "office_hours" -> R.drawable.ic_agenda_office_hours
         "sandbox" -> R.drawable.ic_agenda_sandbox

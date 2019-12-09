@@ -20,7 +20,7 @@
     <item android:drawable="?attr/colorSurface" />
 
     <item
-        android:drawable="@drawable/logo_np_gov"
+        android:drawable="@drawable/logo_nep_gov"
         android:gravity="center" />
 
 </layer-list>

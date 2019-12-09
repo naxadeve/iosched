@@ -152,8 +152,8 @@ object AgendaParser {
             "    {\n" +
             "        \"start\": \"2019-12-10T10:30:00+05:45\",\n" +
             "        \"end\": \"2019-12-10T11:00:00+05:45\",\n" +
-            "        \"title\": \"Tea\",\n" +
-            "        \"type\": \"meal\"\n" +
+            "        \"title\": \"Tea/Coffee Break (Including Poster Session)\",\n" +
+            "        \"type\": \"tea\"\n" +
             "    },\n" +
             "    {\n" +
             "        \"start\": \"2019-12-10T11:00:00+05:45\",\n" +
@@ -170,7 +170,7 @@ object AgendaParser {
             "    {\n" +
             "        \"start\": \"2019-12-10T14:00:00+05:45\",\n" +
             "        \"end\": \"2019-12-10T15:30:00+05:45\",\n" +
-            "        \"title\": \"Techincal Session 1 (Advanced Geospatial Technologies: Urban)\",\n" +
+            "        \"title\": \"Technical Session 1 (Advanced Geospatial Technologies: Urban Monitoring)\",\n" +
             "        \"type\": \"session\"\n" +
             "    },\n" +
             "    {\n" +
@@ -181,7 +181,7 @@ object AgendaParser {
             "    },\n" +
             "    {\n" +
             "        \"start\": \"2019-12-10T14:00:00+05:45\",\n" +
-            "        \"end\": \"2019-12-10T16:30:00+05:45\",\n" +
+            "        \"end\": \"2019-12-10T16:20:00+05:45\",\n" +
             "        \"title\": \"Bim Session\",\n" +
             "        \"type\": \"session\"\n" +
             "    },\n" +
@@ -305,11 +305,12 @@ object AgendaParser {
             "        \"title\": \"Hi-Tea\",\n" +
             "        \"type\": \"after_hours\"\n" +
             "    }\n" +
-            "]"
+            "]";
 
     init {
         typeColorMAP["session"] = COLOR_SESSIONS
         typeColorMAP["meal"] = COLOR_MEAL
+        typeColorMAP["tea"] = COLOR_MEAL
         typeColorMAP["speech"] = COLOR_SPEECH
         typeColorMAP["photo"] = COLOR_PHOTO
         typeColorMAP["badge"] = COLOR_REGISTRATION

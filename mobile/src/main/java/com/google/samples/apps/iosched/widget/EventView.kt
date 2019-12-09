@@ -17,6 +17,7 @@
 package com.google.samples.apps.iosched.widget
 
 import android.content.Context
+import android.text.Html
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -55,7 +56,7 @@ class EventView @JvmOverloads constructor(
             text = eventTitle
         }
         rootView.findViewById<TextView>(R.id.event_content_description).apply {
-            text = eventDescription
+            text = Html.fromHtml(eventDescription)
         }
 
         val viewSessions = rootView.findViewById<Button>(R.id.event_view_sessions)

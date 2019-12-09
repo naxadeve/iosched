@@ -57,7 +57,7 @@
                 android:importantForAccessibility="no"
                 android:padding="@dimen/onboarding_animation_padding"
                 android:scaleType="fitCenter"
-                android:src="@drawable/logo_np_gov"
+                android:src="@drawable/logo_nep_gov"
                 app:layout_constraintBottom_toTopOf="@id/logo"
                 app:layout_constraintEnd_toEndOf="@id/guideline_end"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
